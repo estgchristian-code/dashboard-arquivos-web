@@ -1,0 +1,36 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+    --color-canvas: #f9fafb;
+    --color-surface: #ffffff;
+    --color-ink: #111827;
+    --color-muted: #4b5563;
+    --color-line: #e5e7eb;
+    --color-brand: #2f4b7c;
+    --color-brand-strong: #253c64;
+    --color-brand-soft: #eef2f8;
+}
+
+@layer base {
+    body {
+        @apply bg-canvas text-ink antialiased;
+    }
+
+    ::selection {
+        background-color: var(--color-brand);
+        color: var(--color-surface);
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        html {
+            scroll-behavior: smooth;
+        }
+    }
+}

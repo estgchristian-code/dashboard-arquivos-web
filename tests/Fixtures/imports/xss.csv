@@ -1,0 +1,3 @@
+Nome;Descrição
+A;<script>alert('x')</script>
+B;<img src=x onerror=alert(1)>

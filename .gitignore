@@ -1,0 +1,44 @@
+# Dependências e artefatos de build
+/node_modules
+/public/build
+/public/hot
+/public/storage
+/vendor
+
+# Ambiente e segredos
+.env
+.env.*
+!.env.example
+/auth.json
+/storage/*.key
+
+# Arquivos enviados e dados temporários
+/storage/app/imports/*
+!/storage/app/imports/.gitignore
+/storage/app/uploads/*
+!/storage/app/uploads/.gitignore
+/storage/app/temp/*
+!/storage/app/temp/.gitignore
+/storage/app/private/*
+!/storage/app/private/.gitignore
+/public/uploads
+/storage/pail
+
+# Bancos locais
+/database/*.sqlite
+/database/*.sqlite-journal
+
+# Logs, caches e ferramentas locais
+*.log
+.DS_Store
+Thumbs.db
+.phpactor.json
+.phpunit.result.cache
+/.fleet
+/.idea
+/.nova
+/.phpunit.cache
+/.vscode
+/.zed
+Homestead.json
+Homestead.yaml

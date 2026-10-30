@@ -1,0 +1,23 @@
+[
+    {
+        "Produto": "Caneta",
+        "Quantidade": 10,
+        "Preço": 2.5,
+        "Ativo": true,
+        "Data": "01\/02\/2026"
+    },
+    {
+        "Produto": "Caderno",
+        "Quantidade": 5,
+        "Preço": 18.9,
+        "Ativo": false,
+        "Data": "03\/02\/2026"
+    },
+    {
+        "Produto": "Lápis",
+        "Quantidade": 0,
+        "Preço": 1.2,
+        "Ativo": true,
+        "Data": "05\/02\/2026"
+    }
+]

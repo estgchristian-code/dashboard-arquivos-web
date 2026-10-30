@@ -1,0 +1,5 @@
+﻿Produto;Região;Quantidade;Preço;Data;Ativo;Observação
+Caneta;Sul;10;2,50;01/02/2026;Sim;
+Caderno;Sudeste;5;18,90;03/02/2026;Não;Promoção
+Lápis;Sul;0;1,20;05/02/2026;Sim;
+Borracha;Nordeste;7;3,10;07/02/2026;Sim;Reposição
