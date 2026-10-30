@@ -1,4 +1,4 @@
-# DataCanvas
+# dashboard-aquivos
 
 Site público que transforma planilhas e arquivos tabulares em dashboards com gráficos automáticos, sem cadastro ou login.
 
