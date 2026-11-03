@@ -1,0 +1,726 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR" class="h-full"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="hheGCkkFJGEQiGaD7P9RP1LkChLP1X9PxyLWcdQF">
+    <meta name="description" content="O DataCanvas transforma planilhas em dashboards com gr├â┬íficos autom├â┬íticos. Sem cadastro e sem login.">
+    <title>Dashboard ├óÔé¼ÔÇØ DataCanvas</title>
+    <link rel="preload" as="style" href="http://127.0.0.1:8123/build/assets/app-ClUqk1wb.css"><link rel="modulepreload" as="script" href="http://127.0.0.1:8123/build/assets/app-BVO9wcKn.js"><link rel="stylesheet" href="http://127.0.0.1:8123/build/assets/app-ClUqk1wb.css" data-navigate-track="reload"><script type="module" src="http://127.0.0.1:8123/build/assets/app-BVO9wcKn.js" data-navigate-track="reload"></script></head>
+<body class="flex min-h-full flex-col">
+    <a href="#conteudo" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-brand focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-white">
+        Ir para o conte├â┬║do
+    </a>
+
+        <header class="border-b border-line bg-surface">
+        <div class="mx-auto flex h-16 w-full max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+            <a href="http://127.0.0.1:8123" class="flex items-center gap-2.5" aria-label="DataCanvas ├óÔé¼ÔÇØ p├â┬ígina inicial">
+                <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-brand text-white" aria-hidden="true">
+                    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 19V10"></path>
+                        <path d="M10 19V5"></path>
+                        <path d="M16 19v-6"></path>
+                        <path d="M22 19H2"></path>
+                    </svg>
+                </span>
+                <span class="text-lg font-semibold tracking-tight">DataCanvas</span>
+            </a>
+
+            <div class="flex items-center gap-3">
+                <a href="http://127.0.0.1:8123" class="inline-flex items-center justify-center rounded-md border border-line bg-surface px-3 py-1.5 text-sm font-medium text-muted transition-colors hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand">
+                    Voltar ├â&nbsp; p├â┬ígina inicial
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main id="conteudo" class="flex-1 bg-canvas">
+        <div wire:key="lw-4266609092-0-4" wire:snapshot="{&quot;data&quot;:{&quot;importId&quot;:&quot;b54896ecdee1817a84ce23014c82bbd1&quot;,&quot;import&quot;:[{&quot;id&quot;:&quot;b54896ecdee1817a84ce23014c82bbd1&quot;,&quot;original_name&quot;:&quot;vendas-fevereiro.csv&quot;,&quot;format&quot;:&quot;csv&quot;,&quot;format_label&quot;:&quot;CSV&quot;,&quot;size_bytes&quot;:445,&quot;size_label&quot;:&quot;445.0 B&quot;,&quot;row_count&quot;:12,&quot;column_count&quot;:5,&quot;empty_cells&quot;:0,&quot;encoding&quot;:&quot;UTF-8&quot;,&quot;delimiter&quot;:&quot;,&quot;,&quot;delimiter_label&quot;:&quot;V\u00edrgula&quot;,&quot;sheet_name&quot;:null,&quot;columns&quot;:[[[{&quot;name&quot;:&quot;Produto&quot;,&quot;type&quot;:&quot;text&quot;,&quot;type_label&quot;:&quot;Texto&quot;,&quot;empty_count&quot;:0},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;name&quot;:&quot;Regiao&quot;,&quot;type&quot;:&quot;text&quot;,&quot;type_label&quot;:&quot;Texto&quot;,&quot;empty_count&quot;:0},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;name&quot;:&quot;Quantidade&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;type_label&quot;:&quot;Inteiro&quot;,&quot;empty_count&quot;:0},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;name&quot;:&quot;Valor&quot;,&quot;type&quot;:&quot;decimal&quot;,&quot;type_label&quot;:&quot;Decimal&quot;,&quot;empty_count&quot;:0},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;name&quot;:&quot;Data&quot;,&quot;type&quot;:&quot;date&quot;,&quot;type_label&quot;:&quot;Data&quot;,&quot;empty_count&quot;:0},{&quot;s&quot;:&quot;arr&quot;}]],{&quot;s&quot;:&quot;arr&quot;}],&quot;rows&quot;:[[[[&quot;Caneta&quot;,&quot;Sul&quot;,&quot;10&quot;,&quot;25.50&quot;,&quot;01\/02\/2026&quot;],{&quot;s&quot;:&quot;arr&quot;}],[[&quot;Caderno&quot;,&quot;Sudeste&quot;,&quot;5&quot;,&quot;94.50&quot;,&quot;03\/02\/2026&quot;],{&quot;s&quot;:&quot;arr&quot;}],[[&quot;Lapis&quot;,&quot;Sul&quot;,&quot;0&quot;,&quot;0.00&quot;,&quot;05\/02\/2026&quot;],{&quot;s&quot;:&quot;arr&quot;}],[[&quot;Borracha&quot;,&quot;Nordeste&quot;,&quot;7&quot;,&quot;21.70&quot;,&quot;07\/02\/2026&quot;],{&quot;s&quot;:&quot;arr&quot;}],[[&quot;Mochila&quot;,&quot;Sul&quot;,&quot;3&quot;,&quot;357.00&quot;,&quot;09\/02\/2026&quot;],{&quot;s&quot;:&quot;arr&quot;}],[[&quot;Estojo&quot;,&quot;Sudeste&quot;,&quot;12&quot;,&quot;180.00&quot;,&quot;11\/02\/2026&quot;],{&quot;s&quot;:&quot;arr&quot;}],[[&quot;Marcador&quot;,&quot;Nordeste&quot;,&quot;8&quot;,&quot;64.00&quot;,&quot;13\/02\/2026&quot;],{&quot;s&quot;:&quot;arr&quot;}],[[&quot;Papel&quot;,&quot;Sul&quot;,&quot;40&quot;,&quot;220.00&quot;,&quot;15\/02\/2026&quot;],{&quot;s&quot;:&quot;arr&quot;}],[[&quot;Grampeador&quot;,&quot;Centro-Oeste&quot;,&quot;4&quot;,&quot;140.00&quot;,&quot;17\/02\/2026&quot;],{&quot;s&quot;:&quot;arr&quot;}],[[&quot;Fita&quot;,&quot;Nordeste&quot;,&quot;15&quot;,&quot;45.00&quot;,&quot;19\/02\/2026&quot;],{&quot;s&quot;:&quot;arr&quot;}],[[&quot;Tesoura&quot;,&quot;Sul&quot;,&quot;6&quot;,&quot;72.00&quot;,&quot;21\/02\/2026&quot;],{&quot;s&quot;:&quot;arr&quot;}],[[&quot;Cola&quot;,&quot;Sudeste&quot;,&quot;9&quot;,&quot;40.50&quot;,&quot;23\/02\/2026&quot;],{&quot;s&quot;:&quot;arr&quot;}]],{&quot;s&quot;:&quot;arr&quot;}],&quot;preview_row_count&quot;:12,&quot;has_more&quot;:false,&quot;created_at&quot;:&quot;03\/11\/2026 12:59&quot;,&quot;expires_at&quot;:&quot;04\/11\/2026 12:59&quot;},{&quot;s&quot;:&quot;arr&quot;}],&quot;analysis&quot;:[{&quot;import_id&quot;:&quot;b54896ecdee1817a84ce23014c82bbd1&quot;,&quot;total_records&quot;:12,&quot;column_analyses&quot;:[[[{&quot;name&quot;:&quot;Produto&quot;,&quot;type&quot;:&quot;text&quot;,&quot;is_identifier&quot;:false,&quot;total_count&quot;:12,&quot;non_empty_count&quot;:12,&quot;empty_count&quot;:0,&quot;distinct_count&quot;:12,&quot;duplicate_count&quot;:0,&quot;min&quot;:null,&quot;max&quot;:null,&quot;sum&quot;:null,&quot;mean&quot;:null,&quot;median&quot;:null,&quot;categories&quot;:[[[{&quot;value&quot;:&quot;Caneta&quot;,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;value&quot;:&quot;Caderno&quot;,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;value&quot;:&quot;Lapis&quot;,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;value&quot;:&quot;Borracha&quot;,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;value&quot;:&quot;Mochila&quot;,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;value&quot;:&quot;Estojo&quot;,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;value&quot;:&quot;Marcador&quot;,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;value&quot;:&quot;Papel&quot;,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;value&quot;:&quot;Grampeador&quot;,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;value&quot;:&quot;Fita&quot;,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;value&quot;:&quot;Tesoura&quot;,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;value&quot;:&quot;Cola&quot;,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}]],{&quot;s&quot;:&quot;arr&quot;}],&quot;has_temporal_trend&quot;:false,&quot;is_email&quot;:false,&quot;is_name&quot;:false,&quot;email_domains&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}]},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;name&quot;:&quot;Regiao&quot;,&quot;type&quot;:&quot;text&quot;,&quot;is_identifier&quot;:false,&quot;total_count&quot;:12,&quot;non_empty_count&quot;:12,&quot;empty_count&quot;:0,&quot;distinct_count&quot;:4,&quot;duplicate_count&quot;:8,&quot;min&quot;:null,&quot;max&quot;:null,&quot;sum&quot;:null,&quot;mean&quot;:null,&quot;median&quot;:null,&quot;categories&quot;:[[[{&quot;value&quot;:&quot;Sul&quot;,&quot;count&quot;:5},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;value&quot;:&quot;Sudeste&quot;,&quot;count&quot;:3},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;value&quot;:&quot;Nordeste&quot;,&quot;count&quot;:3},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;value&quot;:&quot;Centro-Oeste&quot;,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}]],{&quot;s&quot;:&quot;arr&quot;}],&quot;has_temporal_trend&quot;:false,&quot;is_email&quot;:false,&quot;is_name&quot;:false,&quot;email_domains&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}]},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;name&quot;:&quot;Quantidade&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;is_identifier&quot;:false,&quot;total_count&quot;:12,&quot;non_empty_count&quot;:12,&quot;empty_count&quot;:0,&quot;distinct_count&quot;:12,&quot;duplicate_count&quot;:0,&quot;min&quot;:0,&quot;max&quot;:40,&quot;sum&quot;:119,&quot;mean&quot;:9.916667,&quot;median&quot;:7.5,&quot;categories&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;has_temporal_trend&quot;:false,&quot;is_email&quot;:false,&quot;is_name&quot;:false,&quot;email_domains&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}]},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;name&quot;:&quot;Valor&quot;,&quot;type&quot;:&quot;decimal&quot;,&quot;is_identifier&quot;:false,&quot;total_count&quot;:12,&quot;non_empty_count&quot;:12,&quot;empty_count&quot;:0,&quot;distinct_count&quot;:12,&quot;duplicate_count&quot;:0,&quot;min&quot;:0,&quot;max&quot;:357,&quot;sum&quot;:1260.2,&quot;mean&quot;:105.016667,&quot;median&quot;:68,&quot;categories&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;has_temporal_trend&quot;:false,&quot;is_email&quot;:false,&quot;is_name&quot;:false,&quot;email_domains&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}]},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;name&quot;:&quot;Data&quot;,&quot;type&quot;:&quot;date&quot;,&quot;is_identifier&quot;:false,&quot;total_count&quot;:12,&quot;non_empty_count&quot;:12,&quot;empty_count&quot;:0,&quot;distinct_count&quot;:12,&quot;duplicate_count&quot;:0,&quot;min&quot;:&quot;2026-02-01&quot;,&quot;max&quot;:&quot;2026-02-23&quot;,&quot;sum&quot;:null,&quot;mean&quot;:null,&quot;median&quot;:null,&quot;categories&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;has_temporal_trend&quot;:true,&quot;is_email&quot;:false,&quot;is_name&quot;:false,&quot;email_domains&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}]},{&quot;s&quot;:&quot;arr&quot;}]],{&quot;s&quot;:&quot;arr&quot;}],&quot;recommendations&quot;:[[[{&quot;chart_type&quot;:&quot;histogram&quot;,&quot;title&quot;:&quot;Distribui\u00e7\u00e3o de Quantidade&quot;,&quot;justification&quot;:&quot;Distribui\u00e7\u00e3o de valores num\u00e9ricos adequada para histograma.&quot;,&quot;metrics&quot;:[{&quot;count&quot;:12,&quot;min&quot;:0,&quot;max&quot;:40,&quot;mean&quot;:9.916667},{&quot;s&quot;:&quot;arr&quot;}],&quot;aggregated_data&quot;:[[[{&quot;bin&quot;:&quot;0 - 8&quot;,&quot;count&quot;:6,&quot;range&quot;:[[0,8],{&quot;s&quot;:&quot;arr&quot;}]},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;bin&quot;:&quot;8 - 16&quot;,&quot;count&quot;:5,&quot;range&quot;:[[8,16],{&quot;s&quot;:&quot;arr&quot;}]},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;bin&quot;:&quot;16 - 24&quot;,&quot;count&quot;:0,&quot;range&quot;:[[16,24],{&quot;s&quot;:&quot;arr&quot;}]},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;bin&quot;:&quot;24 - 32&quot;,&quot;count&quot;:0,&quot;range&quot;:[[24,32],{&quot;s&quot;:&quot;arr&quot;}]},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;bin&quot;:&quot;32 - 40&quot;,&quot;count&quot;:1,&quot;range&quot;:[[32,40],{&quot;s&quot;:&quot;arr&quot;}]},{&quot;s&quot;:&quot;arr&quot;}]],{&quot;s&quot;:&quot;arr&quot;}],&quot;columns&quot;:[[&quot;Quantidade&quot;],{&quot;s&quot;:&quot;arr&quot;}],&quot;issues&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}]},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;chart_type&quot;:&quot;histogram&quot;,&quot;title&quot;:&quot;Distribui\u00e7\u00e3o de Valor&quot;,&quot;justification&quot;:&quot;Distribui\u00e7\u00e3o de valores num\u00e9ricos adequada para histograma.&quot;,&quot;metrics&quot;:[{&quot;count&quot;:12,&quot;min&quot;:0,&quot;max&quot;:357,&quot;mean&quot;:105.016667},{&quot;s&quot;:&quot;arr&quot;}],&quot;aggregated_data&quot;:[[[{&quot;bin&quot;:&quot;0 - 71.4&quot;,&quot;count&quot;:6,&quot;range&quot;:[[0,71.4],{&quot;s&quot;:&quot;arr&quot;}]},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;bin&quot;:&quot;71.4 - 142.8&quot;,&quot;count&quot;:3,&quot;range&quot;:[[71.4,142.8],{&quot;s&quot;:&quot;arr&quot;}]},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;bin&quot;:&quot;142.8 - 214.2&quot;,&quot;count&quot;:1,&quot;range&quot;:[[142.8,214.2],{&quot;s&quot;:&quot;arr&quot;}]},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;bin&quot;:&quot;214.2 - 285.6&quot;,&quot;count&quot;:1,&quot;range&quot;:[[214.2,285.6],{&quot;s&quot;:&quot;arr&quot;}]},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;bin&quot;:&quot;285.6 - 357&quot;,&quot;count&quot;:1,&quot;range&quot;:[[285.6,357],{&quot;s&quot;:&quot;arr&quot;}]},{&quot;s&quot;:&quot;arr&quot;}]],{&quot;s&quot;:&quot;arr&quot;}],&quot;columns&quot;:[[&quot;Valor&quot;],{&quot;s&quot;:&quot;arr&quot;}],&quot;issues&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}]},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;chart_type&quot;:&quot;bar&quot;,&quot;title&quot;:&quot;Distribui\u00e7\u00e3o por Produto&quot;,&quot;justification&quot;:&quot;Categorias adequadas para gr\u00e1fico de barras.&quot;,&quot;metrics&quot;:[{&quot;distinct&quot;:12,&quot;total&quot;:12},{&quot;s&quot;:&quot;arr&quot;}],&quot;aggregated_data&quot;:[[[{&quot;value&quot;:&quot;Caneta&quot;,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;value&quot;:&quot;Caderno&quot;,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;value&quot;:&quot;Lapis&quot;,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;value&quot;:&quot;Borracha&quot;,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;value&quot;:&quot;Mochila&quot;,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;value&quot;:&quot;Estojo&quot;,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;value&quot;:&quot;Marcador&quot;,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;value&quot;:&quot;Papel&quot;,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;value&quot;:&quot;Grampeador&quot;,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;value&quot;:&quot;Fita&quot;,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;value&quot;:&quot;Tesoura&quot;,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;value&quot;:&quot;Cola&quot;,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}]],{&quot;s&quot;:&quot;arr&quot;}],&quot;columns&quot;:[[&quot;Produto&quot;],{&quot;s&quot;:&quot;arr&quot;}],&quot;issues&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}]},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;chart_type&quot;:&quot;pie&quot;,&quot;title&quot;:&quot;Propor\u00e7\u00e3o por Regiao&quot;,&quot;justification&quot;:&quot;Categorias com baixa cardinalidade permitem visualiza\u00e7\u00e3o em pizza.&quot;,&quot;metrics&quot;:[{&quot;distinct&quot;:4,&quot;total&quot;:12},{&quot;s&quot;:&quot;arr&quot;}],&quot;aggregated_data&quot;:[[[{&quot;value&quot;:&quot;Sul&quot;,&quot;count&quot;:5},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;value&quot;:&quot;Sudeste&quot;,&quot;count&quot;:3},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;value&quot;:&quot;Nordeste&quot;,&quot;count&quot;:3},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;value&quot;:&quot;Centro-Oeste&quot;,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}]],{&quot;s&quot;:&quot;arr&quot;}],&quot;columns&quot;:[[&quot;Regiao&quot;],{&quot;s&quot;:&quot;arr&quot;}],&quot;issues&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}]},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;chart_type&quot;:&quot;bar&quot;,&quot;title&quot;:&quot;Soma de Quantidade por Produto&quot;,&quot;justification&quot;:&quot;Combina\u00e7\u00e3o categoria + medida num\u00e9rica permite agrega\u00e7\u00e3o por barras.&quot;,&quot;metrics&quot;:[{&quot;groups&quot;:12},{&quot;s&quot;:&quot;arr&quot;}],&quot;aggregated_data&quot;:[[[{&quot;category&quot;:&quot;Papel&quot;,&quot;value&quot;:40,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;category&quot;:&quot;Fita&quot;,&quot;value&quot;:15,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;category&quot;:&quot;Estojo&quot;,&quot;value&quot;:12,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;category&quot;:&quot;Caneta&quot;,&quot;value&quot;:10,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;category&quot;:&quot;Cola&quot;,&quot;value&quot;:9,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;category&quot;:&quot;Marcador&quot;,&quot;value&quot;:8,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;category&quot;:&quot;Borracha&quot;,&quot;value&quot;:7,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;category&quot;:&quot;Tesoura&quot;,&quot;value&quot;:6,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;category&quot;:&quot;Caderno&quot;,&quot;value&quot;:5,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;category&quot;:&quot;Grampeador&quot;,&quot;value&quot;:4,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;category&quot;:&quot;Mochila&quot;,&quot;value&quot;:3,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;category&quot;:&quot;Lapis&quot;,&quot;value&quot;:0,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}]],{&quot;s&quot;:&quot;arr&quot;}],&quot;columns&quot;:[[&quot;Produto&quot;,&quot;Quantidade&quot;],{&quot;s&quot;:&quot;arr&quot;}],&quot;issues&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}]},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;chart_type&quot;:&quot;line&quot;,&quot;title&quot;:&quot;Quantidade ao longo do tempo&quot;,&quot;justification&quot;:&quot;Dados temporais com medida num\u00e9rica permitem s\u00e9rie temporal.&quot;,&quot;metrics&quot;:[{&quot;points&quot;:12},{&quot;s&quot;:&quot;arr&quot;}],&quot;aggregated_data&quot;:[[[{&quot;date&quot;:&quot;2026-02-01&quot;,&quot;value&quot;:10},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;date&quot;:&quot;2026-02-03&quot;,&quot;value&quot;:5},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;date&quot;:&quot;2026-02-05&quot;,&quot;value&quot;:0},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;date&quot;:&quot;2026-02-07&quot;,&quot;value&quot;:7},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;date&quot;:&quot;2026-02-09&quot;,&quot;value&quot;:3},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;date&quot;:&quot;2026-02-11&quot;,&quot;value&quot;:12},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;date&quot;:&quot;2026-02-13&quot;,&quot;value&quot;:8},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;date&quot;:&quot;2026-02-15&quot;,&quot;value&quot;:40},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;date&quot;:&quot;2026-02-17&quot;,&quot;value&quot;:4},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;date&quot;:&quot;2026-02-19&quot;,&quot;value&quot;:15},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;date&quot;:&quot;2026-02-21&quot;,&quot;value&quot;:6},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;date&quot;:&quot;2026-02-23&quot;,&quot;value&quot;:9},{&quot;s&quot;:&quot;arr&quot;}]],{&quot;s&quot;:&quot;arr&quot;}],&quot;columns&quot;:[[&quot;Data&quot;,&quot;Quantidade&quot;],{&quot;s&quot;:&quot;arr&quot;}],&quot;issues&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}]},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;chart_type&quot;:&quot;area&quot;,&quot;title&quot;:&quot;Quantidade ao longo do tempo (\u00e1rea)&quot;,&quot;justification&quot;:&quot;S\u00e9rie temporal adequada para gr\u00e1fico de \u00e1rea.&quot;,&quot;metrics&quot;:[{&quot;points&quot;:12},{&quot;s&quot;:&quot;arr&quot;}],&quot;aggregated_data&quot;:[[[{&quot;date&quot;:&quot;2026-02-01&quot;,&quot;value&quot;:10},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;date&quot;:&quot;2026-02-03&quot;,&quot;value&quot;:5},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;date&quot;:&quot;2026-02-05&quot;,&quot;value&quot;:0},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;date&quot;:&quot;2026-02-07&quot;,&quot;value&quot;:7},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;date&quot;:&quot;2026-02-09&quot;,&quot;value&quot;:3},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;date&quot;:&quot;2026-02-11&quot;,&quot;value&quot;:12},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;date&quot;:&quot;2026-02-13&quot;,&quot;value&quot;:8},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;date&quot;:&quot;2026-02-15&quot;,&quot;value&quot;:40},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;date&quot;:&quot;2026-02-17&quot;,&quot;value&quot;:4},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;date&quot;:&quot;2026-02-19&quot;,&quot;value&quot;:15},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;date&quot;:&quot;2026-02-21&quot;,&quot;value&quot;:6},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;date&quot;:&quot;2026-02-23&quot;,&quot;value&quot;:9},{&quot;s&quot;:&quot;arr&quot;}]],{&quot;s&quot;:&quot;arr&quot;}],&quot;columns&quot;:[[&quot;Data&quot;,&quot;Quantidade&quot;],{&quot;s&quot;:&quot;arr&quot;}],&quot;issues&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}]},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;chart_type&quot;:&quot;scatter&quot;,&quot;title&quot;:&quot;Valor x Quantidade&quot;,&quot;justification&quot;:&quot;Duas vari\u00e1veis num\u00e9ricas permitem an\u00e1lise de correla\u00e7\u00e3o\/dispers\u00e3o.&quot;,&quot;metrics&quot;:[{&quot;points&quot;:12},{&quot;s&quot;:&quot;arr&quot;}],&quot;aggregated_data&quot;:[[[{&quot;x&quot;:10,&quot;y&quot;:25.5},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;x&quot;:5,&quot;y&quot;:94.5},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;x&quot;:0,&quot;y&quot;:0},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;x&quot;:7,&quot;y&quot;:21.7},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;x&quot;:3,&quot;y&quot;:357},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;x&quot;:12,&quot;y&quot;:180},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;x&quot;:8,&quot;y&quot;:64},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;x&quot;:40,&quot;y&quot;:220},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;x&quot;:4,&quot;y&quot;:140},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;x&quot;:15,&quot;y&quot;:45},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;x&quot;:6,&quot;y&quot;:72},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;x&quot;:9,&quot;y&quot;:40.5},{&quot;s&quot;:&quot;arr&quot;}]],{&quot;s&quot;:&quot;arr&quot;}],&quot;columns&quot;:[[&quot;Quantidade&quot;,&quot;Valor&quot;],{&quot;s&quot;:&quot;arr&quot;}],&quot;issues&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}]},{&quot;s&quot;:&quot;arr&quot;}]],{&quot;s&quot;:&quot;arr&quot;}],&quot;summary&quot;:[{&quot;total_records&quot;:12,&quot;total_columns&quot;:5,&quot;recommendations_count&quot;:8,&quot;filled_cells&quot;:60,&quot;empty_cells&quot;:0,&quot;total_cells&quot;:60,&quot;completeness&quot;:100,&quot;numeric_columns&quot;:2,&quot;text_columns&quot;:2,&quot;date_columns&quot;:1,&quot;boolean_columns&quot;:0,&quot;email_columns&quot;:0,&quot;name_columns&quot;:0,&quot;categorical_columns&quot;:2,&quot;email_domains&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;measures&quot;:[[[{&quot;name&quot;:&quot;Quantidade&quot;,&quot;sum&quot;:119,&quot;mean&quot;:9.916667,&quot;min&quot;:0,&quot;max&quot;:40},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;name&quot;:&quot;Valor&quot;,&quot;sum&quot;:1260.2,&quot;mean&quot;:105.016667,&quot;min&quot;:0,&quot;max&quot;:357},{&quot;s&quot;:&quot;arr&quot;}]],{&quot;s&quot;:&quot;arr&quot;}],&quot;date_range&quot;:[{&quot;min&quot;:&quot;2026-02-01&quot;,&quot;max&quot;:&quot;2026-02-23&quot;},{&quot;s&quot;:&quot;arr&quot;}]},{&quot;s&quot;:&quot;arr&quot;}],&quot;issues&quot;:[{&quot;insufficient_data&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;inconsistent&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}]},{&quot;s&quot;:&quot;arr&quot;}]},{&quot;s&quot;:&quot;arr&quot;}],&quot;loading&quot;:false,&quot;errorMessage&quot;:&quot;&quot;,&quot;tablePage&quot;:1,&quot;tablePerPage&quot;:25,&quot;filters&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;search&quot;:&quot;&quot;,&quot;sortBy&quot;:&quot;&quot;,&quot;sortDirection&quot;:&quot;asc&quot;,&quot;showTable&quot;:false},&quot;memo&quot;:{&quot;id&quot;:&quot;690a55v5cwgkyAvefLPs&quot;,&quot;name&quot;:&quot;data-canvas-dashboard&quot;,&quot;path&quot;:&quot;dashboard\/b54896ecdee1817a84ce23014c82bbd1&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;release&quot;:&quot;a-a-a&quot;,&quot;children&quot;:{&quot;chart-f6ea29a2e90e-0&quot;:[&quot;div&quot;,&quot;WPYa8mpCg3apApsOGC82&quot;],&quot;chart-f6ea29a2e90e-1&quot;:[&quot;div&quot;,&quot;riVMUCQuzBSUBIVBznPh&quot;],&quot;chart-f6ea29a2e90e-2&quot;:[&quot;div&quot;,&quot;yzQbe5ycGrjvlcfbyh5W&quot;],&quot;chart-f6ea29a2e90e-3&quot;:[&quot;div&quot;,&quot;mWqwfOjzhH6BHP4pkgrF&quot;],&quot;chart-f6ea29a2e90e-4&quot;:[&quot;div&quot;,&quot;wWUYvgKp4CvMhz2yt1LD&quot;],&quot;chart-f6ea29a2e90e-5&quot;:[&quot;div&quot;,&quot;unHb6COemx8VyXkbCMhl&quot;],&quot;chart-f6ea29a2e90e-6&quot;:[&quot;div&quot;,&quot;oSCPU7n3Xdb2UlHfPBO8&quot;],&quot;chart-f6ea29a2e90e-7&quot;:[&quot;div&quot;,&quot;kVUdXvTcyAk32Py6aQH4&quot;],&quot;export-panel-b54896ecdee1817a84ce23014c82bbd1&quot;:[&quot;div&quot;,&quot;EJQowuELHXTyOR9wMSDX&quot;]},&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;pt_BR&quot;,&quot;islands&quot;:[]},&quot;checksum&quot;:&quot;b9615ba850cec6261e8603d75faed9de2d439946b655ac0f329fab430c12f9e6&quot;}" wire:effects="[]" wire:id="690a55v5cwgkyAvefLPs" wire:name="data-canvas-dashboard" class="mx-auto w-full max-w-[92rem] px-4 py-6 sm:px-6 lg:px-8 lg:py-8">
+    <!--[if BLOCK]><![endif]-->        <div class="flex flex-col gap-6" data-import-id="b54896ecdee1817a84ce23014c82bbd1">
+            
+            <section class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-indigo-950 via-indigo-900 to-teal-900 text-white shadow-2xl shadow-indigo-950/20">
+                <div class="pointer-events-none absolute -right-24 -top-32 h-80 w-80 rounded-full bg-fuchsia-500/25 blur-3xl" aria-hidden="true"></div>
+                <div class="pointer-events-none absolute -bottom-40 left-1/3 h-96 w-96 rounded-full bg-teal-400/20 blur-3xl" aria-hidden="true"></div>
+
+                <div class="relative flex flex-col gap-8 p-6 sm:p-8 lg:flex-row lg:items-end lg:justify-between">
+                    <div class="min-w-0">
+                        <div class="flex flex-wrap items-center gap-2">
+                            <span class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-indigo-100 backdrop-blur">
+                                <span class="h-1.5 w-1.5 rounded-full bg-emerald-300" aria-hidden="true"></span>
+                                Dashboard autom├â┬ítico
+                            </span>
+                            <span class="rounded-full bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-indigo-100">CSV</span>
+                        </div>
+
+                        <h1 class="mt-4 max-w-3xl break-words text-2xl font-semibold tracking-tight text-white sm:text-3xl lg:text-4xl" title="vendas-fevereiro.csv">
+                            vendas-fevereiro.csv
+                        </h1>
+
+                        <div class="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-indigo-100/80">
+                            <span class="inline-flex items-center gap-1.5">
+                                <svg class="h-4 w-4 text-indigo-200" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M3 3.5A1.5 1.5 0 0 1 4.5 2h11A1.5 1.5 0 0 1 17 3.5v13A1.5 1.5 0 0 1 15.5 18h-11A1.5 1.5 0 0 1 3 16.5v-13Z" opacity=".3"></path><path d="M6 6h8v1.5H6V6Zm0 3h8v1.5H6V9Zm0 3h5v1.5H6V12Z"></path></svg>
+                                12 registros
+                            </span>
+                            <span class="inline-flex items-center gap-1.5">
+                                <svg class="h-4 w-4 text-indigo-200" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M4 3.5A1.5 1.5 0 0 1 5.5 2h9A1.5 1.5 0 0 1 16 3.5v13a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 4 16.5v-13ZM7 6h6v1.5H7V6Zm0 3h6v1.5H7V9Zm0 3h4v1.5H7V12Z"></path></svg>
+                                5 colunas
+                            </span>
+                            <span class="inline-flex items-center gap-1.5">
+                                <svg class="h-4 w-4 text-indigo-200" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 2a8 8 0 1 0 0 16 8 8 0 0 0 0-16Zm.75 4.25a.75.75 0 0 0-1.5 0V10c0 .2.08.39.22.53l2.5 2.5a.75.75 0 1 0 1.06-1.06l-2.28-2.28V6.25Z"></path></svg>
+                                445.0 B ├é┬À expira em 04/11/2026 12:59
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap items-center gap-3 lg:justify-end">
+                        <button wire:click="goToImport" class="inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/10 px-4 py-2.5 text-sm font-medium text-white backdrop-blur transition-colors hover:bg-white/15">
+                            Ver importa├â┬º├â┬úo
+                        </button>
+                        <button wire:click="importAnother" class="inline-flex items-center justify-center rounded-xl bg-white px-4 py-2.5 text-sm font-semibold text-indigo-950 shadow-lg shadow-black/10 transition-colors hover:bg-indigo-50">
+                            Importar outra planilha
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            
+            <section aria-label="Indicadores principais" class="grid gap-4 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-6">
+                <!--[if BLOCK]><![endif]-->                                        <article class="group relative overflow-hidden rounded-2xl border border-line bg-surface p-5 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-slate-200/70">
+                        <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-indigo-500 to-blue-500" aria-hidden="true"></div>
+                        <div class="flex items-start justify-between gap-3">
+                            <div class="min-w-0">
+                                <p class="text-[11px] font-semibold uppercase tracking-[0.12em] text-muted">Registros</p>
+                                <p class="mt-2 break-words text-2xl font-bold tracking-tight text-ink">12</p>
+                                <p class="mt-1 line-clamp-2 text-xs text-muted">linhas analisadas</p>
+                            </div>
+                            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600">
+                                <!--[if BLOCK]><![endif]-->                                        <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M3 4.5A1.5 1.5 0 0 1 4.5 3h11A1.5 1.5 0 0 1 17 4.5v2A1.5 1.5 0 0 1 15.5 8h-11A1.5 1.5 0 0 1 3 6.5v-2Zm0 6A1.5 1.5 0 0 1 4.5 9h11a1.5 1.5 0 0 1 1.5 1.5v2a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 3 12.5v-2Zm0 6A1.5 1.5 0 0 1 4.5 15h11a1.5 1.5 0 0 1 1.5 1.5v.5H3v-.5Z"></path></svg>
+                                        <!--[if ENDBLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                            </span>
+                        </div>
+                    </article>
+                                                        <article class="group relative overflow-hidden rounded-2xl border border-line bg-surface p-5 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-slate-200/70">
+                        <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-violet-500 to-fuchsia-500" aria-hidden="true"></div>
+                        <div class="flex items-start justify-between gap-3">
+                            <div class="min-w-0">
+                                <p class="text-[11px] font-semibold uppercase tracking-[0.12em] text-muted">Colunas</p>
+                                <p class="mt-2 break-words text-2xl font-bold tracking-tight text-ink">5</p>
+                                <p class="mt-1 line-clamp-2 text-xs text-muted">2 num├â┬®ricas ├é┬À 2 texto ├é┬À 1 data</p>
+                            </div>
+                            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-violet-50 text-violet-600">
+                                <!--[if BLOCK]><![endif]-->                                        <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M3 4.5A1.5 1.5 0 0 1 4.5 3h3A1.5 1.5 0 0 1 9 4.5v11A1.5 1.5 0 0 1 7.5 17h-3A1.5 1.5 0 0 1 3 15.5v-11Zm8 0A1.5 1.5 0 0 1 12.5 3h3A1.5 1.5 0 0 1 17 4.5v6A1.5 1.5 0 0 1 15.5 12h-3A1.5 1.5 0 0 1 11 10.5v-6Zm0 9.5A1.5 1.5 0 0 1 12.5 13h3a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-3a1.5 1.5 0 0 1-1.5-1.5v-1Z"></path></svg>
+                                        <!--[if ENDBLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                            </span>
+                        </div>
+                    </article>
+                                                        <article class="group relative overflow-hidden rounded-2xl border border-line bg-surface p-5 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-slate-200/70">
+                        <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-emerald-500 to-teal-500" aria-hidden="true"></div>
+                        <div class="flex items-start justify-between gap-3">
+                            <div class="min-w-0">
+                                <p class="text-[11px] font-semibold uppercase tracking-[0.12em] text-muted">Preenchimento</p>
+                                <p class="mt-2 break-words text-2xl font-bold tracking-tight text-ink">100,0%</p>
+                                <p class="mt-1 line-clamp-2 text-xs text-muted">0 c├â┬®lulas vazias</p>
+                            </div>
+                            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600">
+                                <!--[if BLOCK]><![endif]-->                                        <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 3a7 7 0 0 0-6.99 7.37.75.75 0 0 0 .75.63h1.5a.75.75 0 0 0 .74-.66A4.5 4.5 0 1 1 14.5 10a.75.75 0 0 0 .75.75h1.49a.75.75 0 0 0 .75-.79A7 7 0 0 0 10 3Zm3.28 4.22a.75.75 0 0 0-1.06 0l-2.6 2.6a1.5 1.5 0 1 0 1.06 1.06l2.6-2.6a.75.75 0 0 0 0-1.06Z"></path></svg>
+                                        <!--[if ENDBLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                            </span>
+                        </div>
+                    </article>
+                                                        <article class="group relative overflow-hidden rounded-2xl border border-line bg-surface p-5 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-slate-200/70">
+                        <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-sky-500 to-blue-500" aria-hidden="true"></div>
+                        <div class="flex items-start justify-between gap-3">
+                            <div class="min-w-0">
+                                <p class="text-[11px] font-semibold uppercase tracking-[0.12em] text-muted">Colunas categ├â┬│ricas</p>
+                                <p class="mt-2 break-words text-2xl font-bold tracking-tight text-ink">2</p>
+                                <p class="mt-1 line-clamp-2 text-xs text-muted">prontas para segmentar</p>
+                            </div>
+                            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-sky-50 text-sky-600">
+                                <!--[if BLOCK]><![endif]-->                                        <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M2.5 3.5A1 1 0 0 1 3.5 2.5h5.17a2 2 0 0 1 1.42.59l7.16 7.16a2 2 0 0 1 0 2.82l-4.18 4.18a2 2 0 0 1-2.82 0L3.09 10.09A2 2 0 0 1 2.5 8.67V3.5Zm4.25 3a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5Z"></path></svg>
+                                        <!--[if ENDBLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                            </span>
+                        </div>
+                    </article>
+                                                        <article class="group relative overflow-hidden rounded-2xl border border-line bg-surface p-5 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-slate-200/70">
+                        <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-amber-500 to-orange-500" aria-hidden="true"></div>
+                        <div class="flex items-start justify-between gap-3">
+                            <div class="min-w-0">
+                                <p class="text-[11px] font-semibold uppercase tracking-[0.12em] text-muted">Soma ├é┬À Quantidade</p>
+                                <p class="mt-2 break-words text-2xl font-bold tracking-tight text-ink">119</p>
+                                <p class="mt-1 line-clamp-2 text-xs text-muted">m├â┬®dia 9,92</p>
+                            </div>
+                            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber-50 text-amber-600">
+                                <!--[if BLOCK]><![endif]-->                                        <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M4 3.5A.5.5 0 0 1 4.5 3h11a.5.5 0 0 1 0 1H6.62l4.3 6-4.3 6H15.5a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.4-.8l4.77-6.2L4.1 3.8A.5.5 0 0 1 4 3.5Z"></path></svg>
+                                        <!--[if ENDBLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                            </span>
+                        </div>
+                    </article>
+                                                        <article class="group relative overflow-hidden rounded-2xl border border-line bg-surface p-5 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-slate-200/70">
+                        <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-rose-500 to-pink-500" aria-hidden="true"></div>
+                        <div class="flex items-start justify-between gap-3">
+                            <div class="min-w-0">
+                                <p class="text-[11px] font-semibold uppercase tracking-[0.12em] text-muted">Per├â┬¡odo</p>
+                                <p class="mt-2 break-words text-2xl font-bold tracking-tight text-ink">01/02/2026 ├óÔÇáÔÇÖ 23/02/2026</p>
+                                <p class="mt-1 line-clamp-2 text-xs text-muted">intervalo identificado</p>
+                            </div>
+                            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-rose-50 text-rose-600">
+                                <!--[if BLOCK]><![endif]-->                                        <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M5.5 2a.75.75 0 0 1 .75.75V4h7.5V2.75a.75.75 0 0 1 1.5 0V4h.25A1.5 1.5 0 0 1 17 5.5v10a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 3 15.5v-10A1.5 1.5 0 0 1 4.5 4h.25V2.75A.75.75 0 0 1 5.5 2Zm-1 6v7.5h11V8h-11Z"></path></svg>
+                                        <!--[if ENDBLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                            </span>
+                        </div>
+                    </article>
+                <!--[if ENDBLOCK]><![endif]-->            </section>
+
+            
+            <section class="rounded-2xl border border-line bg-surface p-5 shadow-sm sm:p-6">
+                <div class="flex flex-wrap items-start justify-between gap-3">
+                    <div>
+                        <h2 class="text-sm font-semibold text-ink">Explorar dados</h2>
+                        <p class="mt-1 text-xs text-muted">Busque e combine filtros para recalcular indicadores e gr├â┬íficos em tempo real.</p>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-2">
+                        <span class="inline-flex items-center gap-2 rounded-full border border-line bg-canvas px-3 py-1 text-xs font-medium text-muted">
+                            <span class="h-1.5 w-1.5 rounded-full bg-indigo-500" aria-hidden="true"></span>
+                            12 de 12 registros
+                        </span>
+                        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                    </div>
+                </div>
+
+                <div class="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+                    <label class="block md:col-span-2 xl:col-span-1">
+                        <span class="mb-1.5 block text-xs font-medium text-muted">Buscar em todos os campos</span>
+                        <span class="relative block">
+                            <svg class="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 1 0 3.47 9.77l3.13 3.13a.75.75 0 1 0 1.06-1.06l-3.13-3.13A5.5 5.5 0 0 0 9 3.5ZM5 9a4 4 0 1 1 8 0 4 4 0 0 1-8 0Z" clip-rule="evenodd"></path></svg>
+                            <input type="search" wire:model.live.debounce.400ms="search" placeholder="Nome, e-mail, categoria..." class="w-full rounded-xl border border-line bg-canvas py-2 pl-9 pr-3 text-sm text-ink placeholder:text-muted/70 focus:border-indigo-400 focus:bg-surface focus:outline-none focus:ring-2 focus:ring-indigo-100">
+                        </span>
+                    </label>
+
+                    <!--[if BLOCK]><![endif]-->                        <label class="block">
+                            <span class="mb-1.5 block truncate text-xs font-medium text-muted" title="Produto">Produto</span>
+                            <select wire:model.live="filters.col_0" class="w-full rounded-xl border border-line bg-canvas px-3 py-2 text-sm text-ink focus:border-indigo-400 focus:bg-surface focus:outline-none focus:ring-2 focus:ring-indigo-100">
+                                <option value="">Todos</option>
+                                <!--[if BLOCK]><![endif]-->                                    <option value="Caneta">Caneta</option>
+                                                                    <option value="Caderno">Caderno</option>
+                                                                    <option value="Lapis">Lapis</option>
+                                                                    <option value="Borracha">Borracha</option>
+                                                                    <option value="Mochila">Mochila</option>
+                                                                    <option value="Estojo">Estojo</option>
+                                                                    <option value="Marcador">Marcador</option>
+                                                                    <option value="Papel">Papel</option>
+                                                                    <option value="Grampeador">Grampeador</option>
+                                                                    <option value="Fita">Fita</option>
+                                                                    <option value="Tesoura">Tesoura</option>
+                                                                    <option value="Cola">Cola</option>
+                                <!--[if ENDBLOCK]><![endif]-->                            </select>
+                        </label>
+                                            <label class="block">
+                            <span class="mb-1.5 block truncate text-xs font-medium text-muted" title="Regiao">Regiao</span>
+                            <select wire:model.live="filters.col_1" class="w-full rounded-xl border border-line bg-canvas px-3 py-2 text-sm text-ink focus:border-indigo-400 focus:bg-surface focus:outline-none focus:ring-2 focus:ring-indigo-100">
+                                <option value="">Todos</option>
+                                <!--[if BLOCK]><![endif]-->                                    <option value="Sul">Sul</option>
+                                                                    <option value="Sudeste">Sudeste</option>
+                                                                    <option value="Nordeste">Nordeste</option>
+                                                                    <option value="Centro-Oeste">Centro-Oeste</option>
+                                <!--[if ENDBLOCK]><![endif]-->                            </select>
+                        </label>
+                    <!--[if ENDBLOCK]><![endif]-->                </div>
+            </section>
+
+            <div class="grid min-w-0 gap-6 xl:grid-cols-[minmax(0,1fr)_21rem]">
+                <div class="flex min-w-0 flex-col gap-6">
+                    
+                    <section>
+                        <div class="mb-4 flex flex-wrap items-end justify-between gap-2">
+                            <div>
+                                <h2 class="text-lg font-semibold tracking-tight text-ink">Painel visual</h2>
+                                <p class="mt-1 text-xs text-muted">Visualiza├â┬º├â┬Áes escolhidas a partir dos tipos e agrupamentos reais da planilha.</p>
+                            </div>
+                            <span class="rounded-full border border-line bg-surface px-3 py-1 text-xs font-medium text-muted">
+                                8 visualiza├â┬º├â┬Áes
+                            </span>
+                        </div>
+
+                        <!--[if BLOCK]><![endif]-->                            <div class="grid gap-5 md:grid-cols-2">
+                                <!--[if BLOCK]><![endif]-->                                    <div class="md:col-span-2">
+                                        <div wire:key="chart-f6ea29a2e90e-0" wire:snapshot="{&quot;data&quot;:{&quot;importId&quot;:&quot;b54896ecdee1817a84ce23014c82bbd1&quot;,&quot;recommendation&quot;:[{&quot;chart_type&quot;:&quot;histogram&quot;,&quot;title&quot;:&quot;Distribui\u00e7\u00e3o de Quantidade&quot;,&quot;justification&quot;:&quot;Distribui\u00e7\u00e3o de valores num\u00e9ricos adequada para histograma.&quot;,&quot;metrics&quot;:[{&quot;count&quot;:12,&quot;min&quot;:0,&quot;max&quot;:40,&quot;mean&quot;:9.916667},{&quot;s&quot;:&quot;arr&quot;}],&quot;aggregated_data&quot;:[[[{&quot;bin&quot;:&quot;0 - 8&quot;,&quot;count&quot;:6,&quot;range&quot;:[[0,8],{&quot;s&quot;:&quot;arr&quot;}]},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;bin&quot;:&quot;8 - 16&quot;,&quot;count&quot;:5,&quot;range&quot;:[[8,16],{&quot;s&quot;:&quot;arr&quot;}]},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;bin&quot;:&quot;16 - 24&quot;,&quot;count&quot;:0,&quot;range&quot;:[[16,24],{&quot;s&quot;:&quot;arr&quot;}]},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;bin&quot;:&quot;24 - 32&quot;,&quot;count&quot;:0,&quot;range&quot;:[[24,32],{&quot;s&quot;:&quot;arr&quot;}]},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;bin&quot;:&quot;32 - 40&quot;,&quot;count&quot;:1,&quot;range&quot;:[[32,40],{&quot;s&quot;:&quot;arr&quot;}]},{&quot;s&quot;:&quot;arr&quot;}]],{&quot;s&quot;:&quot;arr&quot;}],&quot;columns&quot;:[[&quot;Quantidade&quot;],{&quot;s&quot;:&quot;arr&quot;}],&quot;issues&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}]},{&quot;s&quot;:&quot;arr&quot;}],&quot;chartId&quot;:&quot;chart-6ae9dab187c67&quot;},&quot;memo&quot;:{&quot;id&quot;:&quot;WPYa8mpCg3apApsOGC82&quot;,&quot;name&quot;:&quot;dashboard-chart&quot;,&quot;path&quot;:&quot;dashboard\/b54896ecdee1817a84ce23014c82bbd1&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;release&quot;:&quot;a-a-a&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;pt_BR&quot;,&quot;islands&quot;:[]},&quot;checksum&quot;:&quot;c8d1ecd7590a85fdee6f4c04db650032a369b4a885f561db85b1dadb3c00f89c&quot;}" wire:effects="[]" wire:id="WPYa8mpCg3apApsOGC82" wire:name="dashboard-chart" class="group overflow-hidden rounded-2xl border border-line bg-surface shadow-sm transition-shadow duration-200 hover:shadow-lg hover:shadow-slate-200/70">
+        <div class="flex items-start justify-between gap-3 border-b border-line px-5 py-4">
+        <div class="min-w-0">
+            <h3 class="truncate text-sm font-semibold text-ink" title="Distribui├â┬º├â┬úo de Quantidade">Distribui├â┬º├â┬úo de Quantidade</h3>
+            <p class="mt-1 line-clamp-2 text-xs leading-5 text-muted">Distribui├â┬º├â┬úo de valores num├â┬®ricos adequada para histograma.</p>
+        </div>
+        <span class="shrink-0 rounded-full border border-indigo-100 bg-indigo-50 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.1em] text-indigo-600">
+            Histograma
+        </span>
+    </div>
+
+    <div class="h-[290px] w-full sm:h-[330px]" wire:ignore="" x-data="DataCanvasChart(JSON.parse('{\u0022chart_type\u0022:\u0022histogram\u0022,\u0022title\u0022:\u0022Distribui├â┬º├â┬úo de Quantidade\u0022,\u0022justification\u0022:\u0022Distribui├â┬º├â┬úo de valores num├â┬®ricos adequada para histograma.\u0022,\u0022metrics\u0022:{\u0022count\u0022:12,\u0022min\u0022:0,\u0022max\u0022:40,\u0022mean\u0022:9.916667},\u0022aggregated_data\u0022:[{\u0022bin\u0022:\u00220 - 8\u0022,\u0022count\u0022:6,\u0022range\u0022:[0,8]},{\u0022bin\u0022:\u00228 - 16\u0022,\u0022count\u0022:5,\u0022range\u0022:[8,16]},{\u0022bin\u0022:\u002216 - 24\u0022,\u0022count\u0022:0,\u0022range\u0022:[16,24]},{\u0022bin\u0022:\u002224 - 32\u0022,\u0022count\u0022:0,\u0022range\u0022:[24,32]},{\u0022bin\u0022:\u002232 - 40\u0022,\u0022count\u0022:1,\u0022range\u0022:[32,40]}],\u0022columns\u0022:[\u0022Quantidade\u0022],\u0022issues\u0022:[]}'))"></div>
+
+    <!--[if BLOCK]><![endif]-->                <div class="border-t border-line bg-canvas/50 px-5 py-2.5">
+            <div class="flex flex-wrap gap-x-4 gap-y-1.5 text-[11px] text-muted">
+                <!--[if BLOCK]><![endif]-->                                        <span class="inline-flex items-baseline gap-1">
+                        <span class="font-semibold text-ink">12</span>
+                        <span>registros</span>
+                    </span>
+                                                        <span class="inline-flex items-baseline gap-1">
+                        <span class="font-semibold text-ink">0</span>
+                        <span>m├â┬¡nimo</span>
+                    </span>
+                                                        <span class="inline-flex items-baseline gap-1">
+                        <span class="font-semibold text-ink">40</span>
+                        <span>m├â┬íximo</span>
+                    </span>
+                                                        <span class="inline-flex items-baseline gap-1">
+                        <span class="font-semibold text-ink">9,92</span>
+                        <span>m├â┬®dia</span>
+                    </span>
+                <!--[if ENDBLOCK]><![endif]-->            </div>
+        </div>
+    <!--[if ENDBLOCK]><![endif]--></div>
+                                    </div>
+                                                                    <div class="">
+                                        <div wire:key="chart-f6ea29a2e90e-1" wire:snapshot="{&quot;data&quot;:{&quot;importId&quot;:&quot;b54896ecdee1817a84ce23014c82bbd1&quot;,&quot;recommendation&quot;:[{&quot;chart_type&quot;:&quot;histogram&quot;,&quot;title&quot;:&quot;Distribui\u00e7\u00e3o de Valor&quot;,&quot;justification&quot;:&quot;Distribui\u00e7\u00e3o de valores num\u00e9ricos adequada para histograma.&quot;,&quot;metrics&quot;:[{&quot;count&quot;:12,&quot;min&quot;:0,&quot;max&quot;:357,&quot;mean&quot;:105.016667},{&quot;s&quot;:&quot;arr&quot;}],&quot;aggregated_data&quot;:[[[{&quot;bin&quot;:&quot;0 - 71.4&quot;,&quot;count&quot;:6,&quot;range&quot;:[[0,71.4],{&quot;s&quot;:&quot;arr&quot;}]},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;bin&quot;:&quot;71.4 - 142.8&quot;,&quot;count&quot;:3,&quot;range&quot;:[[71.4,142.8],{&quot;s&quot;:&quot;arr&quot;}]},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;bin&quot;:&quot;142.8 - 214.2&quot;,&quot;count&quot;:1,&quot;range&quot;:[[142.8,214.2],{&quot;s&quot;:&quot;arr&quot;}]},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;bin&quot;:&quot;214.2 - 285.6&quot;,&quot;count&quot;:1,&quot;range&quot;:[[214.2,285.6],{&quot;s&quot;:&quot;arr&quot;}]},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;bin&quot;:&quot;285.6 - 357&quot;,&quot;count&quot;:1,&quot;range&quot;:[[285.6,357],{&quot;s&quot;:&quot;arr&quot;}]},{&quot;s&quot;:&quot;arr&quot;}]],{&quot;s&quot;:&quot;arr&quot;}],&quot;columns&quot;:[[&quot;Valor&quot;],{&quot;s&quot;:&quot;arr&quot;}],&quot;issues&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}]},{&quot;s&quot;:&quot;arr&quot;}],&quot;chartId&quot;:&quot;chart-6ae9dab188133&quot;},&quot;memo&quot;:{&quot;id&quot;:&quot;riVMUCQuzBSUBIVBznPh&quot;,&quot;name&quot;:&quot;dashboard-chart&quot;,&quot;path&quot;:&quot;dashboard\/b54896ecdee1817a84ce23014c82bbd1&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;release&quot;:&quot;a-a-a&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;pt_BR&quot;,&quot;islands&quot;:[]},&quot;checksum&quot;:&quot;7801e65670b63155427554d447b0ced1c3be46cfdd44c9d53f6529cfcff08ba2&quot;}" wire:effects="[]" wire:id="riVMUCQuzBSUBIVBznPh" wire:name="dashboard-chart" class="group overflow-hidden rounded-2xl border border-line bg-surface shadow-sm transition-shadow duration-200 hover:shadow-lg hover:shadow-slate-200/70">
+        <div class="flex items-start justify-between gap-3 border-b border-line px-5 py-4">
+        <div class="min-w-0">
+            <h3 class="truncate text-sm font-semibold text-ink" title="Distribui├â┬º├â┬úo de Valor">Distribui├â┬º├â┬úo de Valor</h3>
+            <p class="mt-1 line-clamp-2 text-xs leading-5 text-muted">Distribui├â┬º├â┬úo de valores num├â┬®ricos adequada para histograma.</p>
+        </div>
+        <span class="shrink-0 rounded-full border border-indigo-100 bg-indigo-50 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.1em] text-indigo-600">
+            Histograma
+        </span>
+    </div>
+
+    <div class="h-[290px] w-full sm:h-[330px]" wire:ignore="" x-data="DataCanvasChart(JSON.parse('{\u0022chart_type\u0022:\u0022histogram\u0022,\u0022title\u0022:\u0022Distribui├â┬º├â┬úo de Valor\u0022,\u0022justification\u0022:\u0022Distribui├â┬º├â┬úo de valores num├â┬®ricos adequada para histograma.\u0022,\u0022metrics\u0022:{\u0022count\u0022:12,\u0022min\u0022:0,\u0022max\u0022:357,\u0022mean\u0022:105.016667},\u0022aggregated_data\u0022:[{\u0022bin\u0022:\u00220 - 71.4\u0022,\u0022count\u0022:6,\u0022range\u0022:[0,71.4]},{\u0022bin\u0022:\u002271.4 - 142.8\u0022,\u0022count\u0022:3,\u0022range\u0022:[71.4,142.8]},{\u0022bin\u0022:\u0022142.8 - 214.2\u0022,\u0022count\u0022:1,\u0022range\u0022:[142.8,214.2]},{\u0022bin\u0022:\u0022214.2 - 285.6\u0022,\u0022count\u0022:1,\u0022range\u0022:[214.2,285.6]},{\u0022bin\u0022:\u0022285.6 - 357\u0022,\u0022count\u0022:1,\u0022range\u0022:[285.6,357]}],\u0022columns\u0022:[\u0022Valor\u0022],\u0022issues\u0022:[]}'))"></div>
+
+    <!--[if BLOCK]><![endif]-->                <div class="border-t border-line bg-canvas/50 px-5 py-2.5">
+            <div class="flex flex-wrap gap-x-4 gap-y-1.5 text-[11px] text-muted">
+                <!--[if BLOCK]><![endif]-->                                        <span class="inline-flex items-baseline gap-1">
+                        <span class="font-semibold text-ink">12</span>
+                        <span>registros</span>
+                    </span>
+                                                        <span class="inline-flex items-baseline gap-1">
+                        <span class="font-semibold text-ink">0</span>
+                        <span>m├â┬¡nimo</span>
+                    </span>
+                                                        <span class="inline-flex items-baseline gap-1">
+                        <span class="font-semibold text-ink">357</span>
+                        <span>m├â┬íximo</span>
+                    </span>
+                                                        <span class="inline-flex items-baseline gap-1">
+                        <span class="font-semibold text-ink">105,02</span>
+                        <span>m├â┬®dia</span>
+                    </span>
+                <!--[if ENDBLOCK]><![endif]-->            </div>
+        </div>
+    <!--[if ENDBLOCK]><![endif]--></div>
+                                    </div>
+                                                                    <div class="">
+                                        <div wire:key="chart-f6ea29a2e90e-2" wire:snapshot="{&quot;data&quot;:{&quot;importId&quot;:&quot;b54896ecdee1817a84ce23014c82bbd1&quot;,&quot;recommendation&quot;:[{&quot;chart_type&quot;:&quot;bar&quot;,&quot;title&quot;:&quot;Distribui\u00e7\u00e3o por Produto&quot;,&quot;justification&quot;:&quot;Categorias adequadas para gr\u00e1fico de barras.&quot;,&quot;metrics&quot;:[{&quot;distinct&quot;:12,&quot;total&quot;:12},{&quot;s&quot;:&quot;arr&quot;}],&quot;aggregated_data&quot;:[[[{&quot;value&quot;:&quot;Caneta&quot;,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;value&quot;:&quot;Caderno&quot;,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;value&quot;:&quot;Lapis&quot;,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;value&quot;:&quot;Borracha&quot;,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;value&quot;:&quot;Mochila&quot;,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;value&quot;:&quot;Estojo&quot;,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;value&quot;:&quot;Marcador&quot;,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;value&quot;:&quot;Papel&quot;,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;value&quot;:&quot;Grampeador&quot;,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;value&quot;:&quot;Fita&quot;,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;value&quot;:&quot;Tesoura&quot;,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;value&quot;:&quot;Cola&quot;,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}]],{&quot;s&quot;:&quot;arr&quot;}],&quot;columns&quot;:[[&quot;Produto&quot;],{&quot;s&quot;:&quot;arr&quot;}],&quot;issues&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}]},{&quot;s&quot;:&quot;arr&quot;}],&quot;chartId&quot;:&quot;chart-6ae9dab18856c&quot;},&quot;memo&quot;:{&quot;id&quot;:&quot;yzQbe5ycGrjvlcfbyh5W&quot;,&quot;name&quot;:&quot;dashboard-chart&quot;,&quot;path&quot;:&quot;dashboard\/b54896ecdee1817a84ce23014c82bbd1&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;release&quot;:&quot;a-a-a&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;pt_BR&quot;,&quot;islands&quot;:[]},&quot;checksum&quot;:&quot;e163b957081763c99804416d2659f0d5155fc6d4de3d8127f244c60703b71c86&quot;}" wire:effects="[]" wire:id="yzQbe5ycGrjvlcfbyh5W" wire:name="dashboard-chart" class="group overflow-hidden rounded-2xl border border-line bg-surface shadow-sm transition-shadow duration-200 hover:shadow-lg hover:shadow-slate-200/70">
+        <div class="flex items-start justify-between gap-3 border-b border-line px-5 py-4">
+        <div class="min-w-0">
+            <h3 class="truncate text-sm font-semibold text-ink" title="Distribui├â┬º├â┬úo por Produto">Distribui├â┬º├â┬úo por Produto</h3>
+            <p class="mt-1 line-clamp-2 text-xs leading-5 text-muted">Categorias adequadas para gr├â┬ífico de barras.</p>
+        </div>
+        <span class="shrink-0 rounded-full border border-indigo-100 bg-indigo-50 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.1em] text-indigo-600">
+            Barras
+        </span>
+    </div>
+
+    <div class="h-[290px] w-full sm:h-[330px]" wire:ignore="" x-data="DataCanvasChart(JSON.parse('{\u0022chart_type\u0022:\u0022bar\u0022,\u0022title\u0022:\u0022Distribui├â┬º├â┬úo por Produto\u0022,\u0022justification\u0022:\u0022Categorias adequadas para gr├â┬ífico de barras.\u0022,\u0022metrics\u0022:{\u0022distinct\u0022:12,\u0022total\u0022:12},\u0022aggregated_data\u0022:[{\u0022value\u0022:\u0022Caneta\u0022,\u0022count\u0022:1},{\u0022value\u0022:\u0022Caderno\u0022,\u0022count\u0022:1},{\u0022value\u0022:\u0022Lapis\u0022,\u0022count\u0022:1},{\u0022value\u0022:\u0022Borracha\u0022,\u0022count\u0022:1},{\u0022value\u0022:\u0022Mochila\u0022,\u0022count\u0022:1},{\u0022value\u0022:\u0022Estojo\u0022,\u0022count\u0022:1},{\u0022value\u0022:\u0022Marcador\u0022,\u0022count\u0022:1},{\u0022value\u0022:\u0022Papel\u0022,\u0022count\u0022:1},{\u0022value\u0022:\u0022Grampeador\u0022,\u0022count\u0022:1},{\u0022value\u0022:\u0022Fita\u0022,\u0022count\u0022:1},{\u0022value\u0022:\u0022Tesoura\u0022,\u0022count\u0022:1},{\u0022value\u0022:\u0022Cola\u0022,\u0022count\u0022:1}],\u0022columns\u0022:[\u0022Produto\u0022],\u0022issues\u0022:[]}'))"></div>
+
+    <!--[if BLOCK]><![endif]-->                <div class="border-t border-line bg-canvas/50 px-5 py-2.5">
+            <div class="flex flex-wrap gap-x-4 gap-y-1.5 text-[11px] text-muted">
+                <!--[if BLOCK]><![endif]-->                                        <span class="inline-flex items-baseline gap-1">
+                        <span class="font-semibold text-ink">12</span>
+                        <span>categorias</span>
+                    </span>
+                                                        <span class="inline-flex items-baseline gap-1">
+                        <span class="font-semibold text-ink">12</span>
+                        <span>preenchidos</span>
+                    </span>
+                <!--[if ENDBLOCK]><![endif]-->            </div>
+        </div>
+    <!--[if ENDBLOCK]><![endif]--></div>
+                                    </div>
+                                                                    <div class="">
+                                        <div wire:key="chart-f6ea29a2e90e-3" wire:snapshot="{&quot;data&quot;:{&quot;importId&quot;:&quot;b54896ecdee1817a84ce23014c82bbd1&quot;,&quot;recommendation&quot;:[{&quot;chart_type&quot;:&quot;pie&quot;,&quot;title&quot;:&quot;Propor\u00e7\u00e3o por Regiao&quot;,&quot;justification&quot;:&quot;Categorias com baixa cardinalidade permitem visualiza\u00e7\u00e3o em pizza.&quot;,&quot;metrics&quot;:[{&quot;distinct&quot;:4,&quot;total&quot;:12},{&quot;s&quot;:&quot;arr&quot;}],&quot;aggregated_data&quot;:[[[{&quot;value&quot;:&quot;Sul&quot;,&quot;count&quot;:5},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;value&quot;:&quot;Sudeste&quot;,&quot;count&quot;:3},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;value&quot;:&quot;Nordeste&quot;,&quot;count&quot;:3},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;value&quot;:&quot;Centro-Oeste&quot;,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}]],{&quot;s&quot;:&quot;arr&quot;}],&quot;columns&quot;:[[&quot;Regiao&quot;],{&quot;s&quot;:&quot;arr&quot;}],&quot;issues&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}]},{&quot;s&quot;:&quot;arr&quot;}],&quot;chartId&quot;:&quot;chart-6ae9dab188979&quot;},&quot;memo&quot;:{&quot;id&quot;:&quot;mWqwfOjzhH6BHP4pkgrF&quot;,&quot;name&quot;:&quot;dashboard-chart&quot;,&quot;path&quot;:&quot;dashboard\/b54896ecdee1817a84ce23014c82bbd1&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;release&quot;:&quot;a-a-a&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;pt_BR&quot;,&quot;islands&quot;:[]},&quot;checksum&quot;:&quot;c6b158c33750f57e10e4b99b376057f2d3c3a38196364ee3e655b388b3794b5f&quot;}" wire:effects="[]" wire:id="mWqwfOjzhH6BHP4pkgrF" wire:name="dashboard-chart" class="group overflow-hidden rounded-2xl border border-line bg-surface shadow-sm transition-shadow duration-200 hover:shadow-lg hover:shadow-slate-200/70">
+        <div class="flex items-start justify-between gap-3 border-b border-line px-5 py-4">
+        <div class="min-w-0">
+            <h3 class="truncate text-sm font-semibold text-ink" title="Propor├â┬º├â┬úo por Regiao">Propor├â┬º├â┬úo por Regiao</h3>
+            <p class="mt-1 line-clamp-2 text-xs leading-5 text-muted">Categorias com baixa cardinalidade permitem visualiza├â┬º├â┬úo em pizza.</p>
+        </div>
+        <span class="shrink-0 rounded-full border border-indigo-100 bg-indigo-50 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.1em] text-indigo-600">
+            Pizza
+        </span>
+    </div>
+
+    <div class="h-[290px] w-full sm:h-[330px]" wire:ignore="" x-data="DataCanvasChart(JSON.parse('{\u0022chart_type\u0022:\u0022pie\u0022,\u0022title\u0022:\u0022Propor├â┬º├â┬úo por Regiao\u0022,\u0022justification\u0022:\u0022Categorias com baixa cardinalidade permitem visualiza├â┬º├â┬úo em pizza.\u0022,\u0022metrics\u0022:{\u0022distinct\u0022:4,\u0022total\u0022:12},\u0022aggregated_data\u0022:[{\u0022value\u0022:\u0022Sul\u0022,\u0022count\u0022:5},{\u0022value\u0022:\u0022Sudeste\u0022,\u0022count\u0022:3},{\u0022value\u0022:\u0022Nordeste\u0022,\u0022count\u0022:3},{\u0022value\u0022:\u0022Centro-Oeste\u0022,\u0022count\u0022:1}],\u0022columns\u0022:[\u0022Regiao\u0022],\u0022issues\u0022:[]}'))"></div>
+
+    <!--[if BLOCK]><![endif]-->                <div class="border-t border-line bg-canvas/50 px-5 py-2.5">
+            <div class="flex flex-wrap gap-x-4 gap-y-1.5 text-[11px] text-muted">
+                <!--[if BLOCK]><![endif]-->                                        <span class="inline-flex items-baseline gap-1">
+                        <span class="font-semibold text-ink">4</span>
+                        <span>categorias</span>
+                    </span>
+                                                        <span class="inline-flex items-baseline gap-1">
+                        <span class="font-semibold text-ink">12</span>
+                        <span>preenchidos</span>
+                    </span>
+                <!--[if ENDBLOCK]><![endif]-->            </div>
+        </div>
+    <!--[if ENDBLOCK]><![endif]--></div>
+                                    </div>
+                                                                    <div class="">
+                                        <div wire:key="chart-f6ea29a2e90e-4" wire:snapshot="{&quot;data&quot;:{&quot;importId&quot;:&quot;b54896ecdee1817a84ce23014c82bbd1&quot;,&quot;recommendation&quot;:[{&quot;chart_type&quot;:&quot;bar&quot;,&quot;title&quot;:&quot;Soma de Quantidade por Produto&quot;,&quot;justification&quot;:&quot;Combina\u00e7\u00e3o categoria + medida num\u00e9rica permite agrega\u00e7\u00e3o por barras.&quot;,&quot;metrics&quot;:[{&quot;groups&quot;:12},{&quot;s&quot;:&quot;arr&quot;}],&quot;aggregated_data&quot;:[[[{&quot;category&quot;:&quot;Papel&quot;,&quot;value&quot;:40,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;category&quot;:&quot;Fita&quot;,&quot;value&quot;:15,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;category&quot;:&quot;Estojo&quot;,&quot;value&quot;:12,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;category&quot;:&quot;Caneta&quot;,&quot;value&quot;:10,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;category&quot;:&quot;Cola&quot;,&quot;value&quot;:9,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;category&quot;:&quot;Marcador&quot;,&quot;value&quot;:8,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;category&quot;:&quot;Borracha&quot;,&quot;value&quot;:7,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;category&quot;:&quot;Tesoura&quot;,&quot;value&quot;:6,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;category&quot;:&quot;Caderno&quot;,&quot;value&quot;:5,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;category&quot;:&quot;Grampeador&quot;,&quot;value&quot;:4,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;category&quot;:&quot;Mochila&quot;,&quot;value&quot;:3,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;category&quot;:&quot;Lapis&quot;,&quot;value&quot;:0,&quot;count&quot;:1},{&quot;s&quot;:&quot;arr&quot;}]],{&quot;s&quot;:&quot;arr&quot;}],&quot;columns&quot;:[[&quot;Produto&quot;,&quot;Quantidade&quot;],{&quot;s&quot;:&quot;arr&quot;}],&quot;issues&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}]},{&quot;s&quot;:&quot;arr&quot;}],&quot;chartId&quot;:&quot;chart-6ae9dab188d88&quot;},&quot;memo&quot;:{&quot;id&quot;:&quot;wWUYvgKp4CvMhz2yt1LD&quot;,&quot;name&quot;:&quot;dashboard-chart&quot;,&quot;path&quot;:&quot;dashboard\/b54896ecdee1817a84ce23014c82bbd1&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;release&quot;:&quot;a-a-a&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;pt_BR&quot;,&quot;islands&quot;:[]},&quot;checksum&quot;:&quot;7af4c4ca2259b003b08d6dee486d9441fa9f87747ccc70e79ba36f7f4b9f9c7e&quot;}" wire:effects="[]" wire:id="wWUYvgKp4CvMhz2yt1LD" wire:name="dashboard-chart" class="group overflow-hidden rounded-2xl border border-line bg-surface shadow-sm transition-shadow duration-200 hover:shadow-lg hover:shadow-slate-200/70">
+        <div class="flex items-start justify-between gap-3 border-b border-line px-5 py-4">
+        <div class="min-w-0">
+            <h3 class="truncate text-sm font-semibold text-ink" title="Soma de Quantidade por Produto">Soma de Quantidade por Produto</h3>
+            <p class="mt-1 line-clamp-2 text-xs leading-5 text-muted">Combina├â┬º├â┬úo categoria + medida num├â┬®rica permite agrega├â┬º├â┬úo por barras.</p>
+        </div>
+        <span class="shrink-0 rounded-full border border-indigo-100 bg-indigo-50 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.1em] text-indigo-600">
+            Barras
+        </span>
+    </div>
+
+    <div class="h-[290px] w-full sm:h-[330px]" wire:ignore="" x-data="DataCanvasChart(JSON.parse('{\u0022chart_type\u0022:\u0022bar\u0022,\u0022title\u0022:\u0022Soma de Quantidade por Produto\u0022,\u0022justification\u0022:\u0022Combina├â┬º├â┬úo categoria + medida num├â┬®rica permite agrega├â┬º├â┬úo por barras.\u0022,\u0022metrics\u0022:{\u0022groups\u0022:12},\u0022aggregated_data\u0022:[{\u0022category\u0022:\u0022Papel\u0022,\u0022value\u0022:40,\u0022count\u0022:1},{\u0022category\u0022:\u0022Fita\u0022,\u0022value\u0022:15,\u0022count\u0022:1},{\u0022category\u0022:\u0022Estojo\u0022,\u0022value\u0022:12,\u0022count\u0022:1},{\u0022category\u0022:\u0022Caneta\u0022,\u0022value\u0022:10,\u0022count\u0022:1},{\u0022category\u0022:\u0022Cola\u0022,\u0022value\u0022:9,\u0022count\u0022:1},{\u0022category\u0022:\u0022Marcador\u0022,\u0022value\u0022:8,\u0022count\u0022:1},{\u0022category\u0022:\u0022Borracha\u0022,\u0022value\u0022:7,\u0022count\u0022:1},{\u0022category\u0022:\u0022Tesoura\u0022,\u0022value\u0022:6,\u0022count\u0022:1},{\u0022category\u0022:\u0022Caderno\u0022,\u0022value\u0022:5,\u0022count\u0022:1},{\u0022category\u0022:\u0022Grampeador\u0022,\u0022value\u0022:4,\u0022count\u0022:1},{\u0022category\u0022:\u0022Mochila\u0022,\u0022value\u0022:3,\u0022count\u0022:1},{\u0022category\u0022:\u0022Lapis\u0022,\u0022value\u0022:0,\u0022count\u0022:1}],\u0022columns\u0022:[\u0022Produto\u0022,\u0022Quantidade\u0022],\u0022issues\u0022:[]}'))"></div>
+
+    <!--[if BLOCK]><![endif]-->                <div class="border-t border-line bg-canvas/50 px-5 py-2.5">
+            <div class="flex flex-wrap gap-x-4 gap-y-1.5 text-[11px] text-muted">
+                <!--[if BLOCK]><![endif]-->                                        <span class="inline-flex items-baseline gap-1">
+                        <span class="font-semibold text-ink">12</span>
+                        <span>grupos</span>
+                    </span>
+                <!--[if ENDBLOCK]><![endif]-->            </div>
+        </div>
+    <!--[if ENDBLOCK]><![endif]--></div>
+                                    </div>
+                                                                    <div class="">
+                                        <div wire:key="chart-f6ea29a2e90e-5" wire:snapshot="{&quot;data&quot;:{&quot;importId&quot;:&quot;b54896ecdee1817a84ce23014c82bbd1&quot;,&quot;recommendation&quot;:[{&quot;chart_type&quot;:&quot;line&quot;,&quot;title&quot;:&quot;Quantidade ao longo do tempo&quot;,&quot;justification&quot;:&quot;Dados temporais com medida num\u00e9rica permitem s\u00e9rie temporal.&quot;,&quot;metrics&quot;:[{&quot;points&quot;:12},{&quot;s&quot;:&quot;arr&quot;}],&quot;aggregated_data&quot;:[[[{&quot;date&quot;:&quot;2026-02-01&quot;,&quot;value&quot;:10},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;date&quot;:&quot;2026-02-03&quot;,&quot;value&quot;:5},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;date&quot;:&quot;2026-02-05&quot;,&quot;value&quot;:0},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;date&quot;:&quot;2026-02-07&quot;,&quot;value&quot;:7},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;date&quot;:&quot;2026-02-09&quot;,&quot;value&quot;:3},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;date&quot;:&quot;2026-02-11&quot;,&quot;value&quot;:12},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;date&quot;:&quot;2026-02-13&quot;,&quot;value&quot;:8},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;date&quot;:&quot;2026-02-15&quot;,&quot;value&quot;:40},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;date&quot;:&quot;2026-02-17&quot;,&quot;value&quot;:4},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;date&quot;:&quot;2026-02-19&quot;,&quot;value&quot;:15},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;date&quot;:&quot;2026-02-21&quot;,&quot;value&quot;:6},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;date&quot;:&quot;2026-02-23&quot;,&quot;value&quot;:9},{&quot;s&quot;:&quot;arr&quot;}]],{&quot;s&quot;:&quot;arr&quot;}],&quot;columns&quot;:[[&quot;Data&quot;,&quot;Quantidade&quot;],{&quot;s&quot;:&quot;arr&quot;}],&quot;issues&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}]},{&quot;s&quot;:&quot;arr&quot;}],&quot;chartId&quot;:&quot;chart-6ae9dab1891a4&quot;},&quot;memo&quot;:{&quot;id&quot;:&quot;unHb6COemx8VyXkbCMhl&quot;,&quot;name&quot;:&quot;dashboard-chart&quot;,&quot;path&quot;:&quot;dashboard\/b54896ecdee1817a84ce23014c82bbd1&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;release&quot;:&quot;a-a-a&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;pt_BR&quot;,&quot;islands&quot;:[]},&quot;checksum&quot;:&quot;fa189ac089428ffb4d5f505b76a8a4fba8d272384be614b04d4e2da818e0b68e&quot;}" wire:effects="[]" wire:id="unHb6COemx8VyXkbCMhl" wire:name="dashboard-chart" class="group overflow-hidden rounded-2xl border border-line bg-surface shadow-sm transition-shadow duration-200 hover:shadow-lg hover:shadow-slate-200/70">
+        <div class="flex items-start justify-between gap-3 border-b border-line px-5 py-4">
+        <div class="min-w-0">
+            <h3 class="truncate text-sm font-semibold text-ink" title="Quantidade ao longo do tempo">Quantidade ao longo do tempo</h3>
+            <p class="mt-1 line-clamp-2 text-xs leading-5 text-muted">Dados temporais com medida num├â┬®rica permitem s├â┬®rie temporal.</p>
+        </div>
+        <span class="shrink-0 rounded-full border border-indigo-100 bg-indigo-50 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.1em] text-indigo-600">
+            Linhas
+        </span>
+    </div>
+
+    <div class="h-[290px] w-full sm:h-[330px]" wire:ignore="" x-data="DataCanvasChart(JSON.parse('{\u0022chart_type\u0022:\u0022line\u0022,\u0022title\u0022:\u0022Quantidade ao longo do tempo\u0022,\u0022justification\u0022:\u0022Dados temporais com medida num├â┬®rica permitem s├â┬®rie temporal.\u0022,\u0022metrics\u0022:{\u0022points\u0022:12},\u0022aggregated_data\u0022:[{\u0022date\u0022:\u00222026-02-01\u0022,\u0022value\u0022:10},{\u0022date\u0022:\u00222026-02-03\u0022,\u0022value\u0022:5},{\u0022date\u0022:\u00222026-02-05\u0022,\u0022value\u0022:0},{\u0022date\u0022:\u00222026-02-07\u0022,\u0022value\u0022:7},{\u0022date\u0022:\u00222026-02-09\u0022,\u0022value\u0022:3},{\u0022date\u0022:\u00222026-02-11\u0022,\u0022value\u0022:12},{\u0022date\u0022:\u00222026-02-13\u0022,\u0022value\u0022:8},{\u0022date\u0022:\u00222026-02-15\u0022,\u0022value\u0022:40},{\u0022date\u0022:\u00222026-02-17\u0022,\u0022value\u0022:4},{\u0022date\u0022:\u00222026-02-19\u0022,\u0022value\u0022:15},{\u0022date\u0022:\u00222026-02-21\u0022,\u0022value\u0022:6},{\u0022date\u0022:\u00222026-02-23\u0022,\u0022value\u0022:9}],\u0022columns\u0022:[\u0022Data\u0022,\u0022Quantidade\u0022],\u0022issues\u0022:[]}'))"></div>
+
+    <!--[if BLOCK]><![endif]-->                <div class="border-t border-line bg-canvas/50 px-5 py-2.5">
+            <div class="flex flex-wrap gap-x-4 gap-y-1.5 text-[11px] text-muted">
+                <!--[if BLOCK]><![endif]-->                                        <span class="inline-flex items-baseline gap-1">
+                        <span class="font-semibold text-ink">12</span>
+                        <span>pontos</span>
+                    </span>
+                <!--[if ENDBLOCK]><![endif]-->            </div>
+        </div>
+    <!--[if ENDBLOCK]><![endif]--></div>
+                                    </div>
+                                                                    <div class="">
+                                        <div wire:key="chart-f6ea29a2e90e-6" wire:snapshot="{&quot;data&quot;:{&quot;importId&quot;:&quot;b54896ecdee1817a84ce23014c82bbd1&quot;,&quot;recommendation&quot;:[{&quot;chart_type&quot;:&quot;area&quot;,&quot;title&quot;:&quot;Quantidade ao longo do tempo (\u00e1rea)&quot;,&quot;justification&quot;:&quot;S\u00e9rie temporal adequada para gr\u00e1fico de \u00e1rea.&quot;,&quot;metrics&quot;:[{&quot;points&quot;:12},{&quot;s&quot;:&quot;arr&quot;}],&quot;aggregated_data&quot;:[[[{&quot;date&quot;:&quot;2026-02-01&quot;,&quot;value&quot;:10},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;date&quot;:&quot;2026-02-03&quot;,&quot;value&quot;:5},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;date&quot;:&quot;2026-02-05&quot;,&quot;value&quot;:0},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;date&quot;:&quot;2026-02-07&quot;,&quot;value&quot;:7},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;date&quot;:&quot;2026-02-09&quot;,&quot;value&quot;:3},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;date&quot;:&quot;2026-02-11&quot;,&quot;value&quot;:12},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;date&quot;:&quot;2026-02-13&quot;,&quot;value&quot;:8},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;date&quot;:&quot;2026-02-15&quot;,&quot;value&quot;:40},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;date&quot;:&quot;2026-02-17&quot;,&quot;value&quot;:4},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;date&quot;:&quot;2026-02-19&quot;,&quot;value&quot;:15},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;date&quot;:&quot;2026-02-21&quot;,&quot;value&quot;:6},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;date&quot;:&quot;2026-02-23&quot;,&quot;value&quot;:9},{&quot;s&quot;:&quot;arr&quot;}]],{&quot;s&quot;:&quot;arr&quot;}],&quot;columns&quot;:[[&quot;Data&quot;,&quot;Quantidade&quot;],{&quot;s&quot;:&quot;arr&quot;}],&quot;issues&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}]},{&quot;s&quot;:&quot;arr&quot;}],&quot;chartId&quot;:&quot;chart-6ae9dab1895b1&quot;},&quot;memo&quot;:{&quot;id&quot;:&quot;oSCPU7n3Xdb2UlHfPBO8&quot;,&quot;name&quot;:&quot;dashboard-chart&quot;,&quot;path&quot;:&quot;dashboard\/b54896ecdee1817a84ce23014c82bbd1&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;release&quot;:&quot;a-a-a&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;pt_BR&quot;,&quot;islands&quot;:[]},&quot;checksum&quot;:&quot;0381df22125c41073b3f6562d71d4bfaffbfcea2b1252fd68b29367cbf9d5f67&quot;}" wire:effects="[]" wire:id="oSCPU7n3Xdb2UlHfPBO8" wire:name="dashboard-chart" class="group overflow-hidden rounded-2xl border border-line bg-surface shadow-sm transition-shadow duration-200 hover:shadow-lg hover:shadow-slate-200/70">
+        <div class="flex items-start justify-between gap-3 border-b border-line px-5 py-4">
+        <div class="min-w-0">
+            <h3 class="truncate text-sm font-semibold text-ink" title="Quantidade ao longo do tempo (├â┬írea)">Quantidade ao longo do tempo (├â┬írea)</h3>
+            <p class="mt-1 line-clamp-2 text-xs leading-5 text-muted">S├â┬®rie temporal adequada para gr├â┬ífico de ├â┬írea.</p>
+        </div>
+        <span class="shrink-0 rounded-full border border-indigo-100 bg-indigo-50 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.1em] text-indigo-600">
+            ├â┬ürea
+        </span>
+    </div>
+
+    <div class="h-[290px] w-full sm:h-[330px]" wire:ignore="" x-data="DataCanvasChart(JSON.parse('{\u0022chart_type\u0022:\u0022area\u0022,\u0022title\u0022:\u0022Quantidade ao longo do tempo (├â┬írea)\u0022,\u0022justification\u0022:\u0022S├â┬®rie temporal adequada para gr├â┬ífico de ├â┬írea.\u0022,\u0022metrics\u0022:{\u0022points\u0022:12},\u0022aggregated_data\u0022:[{\u0022date\u0022:\u00222026-02-01\u0022,\u0022value\u0022:10},{\u0022date\u0022:\u00222026-02-03\u0022,\u0022value\u0022:5},{\u0022date\u0022:\u00222026-02-05\u0022,\u0022value\u0022:0},{\u0022date\u0022:\u00222026-02-07\u0022,\u0022value\u0022:7},{\u0022date\u0022:\u00222026-02-09\u0022,\u0022value\u0022:3},{\u0022date\u0022:\u00222026-02-11\u0022,\u0022value\u0022:12},{\u0022date\u0022:\u00222026-02-13\u0022,\u0022value\u0022:8},{\u0022date\u0022:\u00222026-02-15\u0022,\u0022value\u0022:40},{\u0022date\u0022:\u00222026-02-17\u0022,\u0022value\u0022:4},{\u0022date\u0022:\u00222026-02-19\u0022,\u0022value\u0022:15},{\u0022date\u0022:\u00222026-02-21\u0022,\u0022value\u0022:6},{\u0022date\u0022:\u00222026-02-23\u0022,\u0022value\u0022:9}],\u0022columns\u0022:[\u0022Data\u0022,\u0022Quantidade\u0022],\u0022issues\u0022:[]}'))"></div>
+
+    <!--[if BLOCK]><![endif]-->                <div class="border-t border-line bg-canvas/50 px-5 py-2.5">
+            <div class="flex flex-wrap gap-x-4 gap-y-1.5 text-[11px] text-muted">
+                <!--[if BLOCK]><![endif]-->                                        <span class="inline-flex items-baseline gap-1">
+                        <span class="font-semibold text-ink">12</span>
+                        <span>pontos</span>
+                    </span>
+                <!--[if ENDBLOCK]><![endif]-->            </div>
+        </div>
+    <!--[if ENDBLOCK]><![endif]--></div>
+                                    </div>
+                                                                    <div class="">
+                                        <div wire:key="chart-f6ea29a2e90e-7" wire:snapshot="{&quot;data&quot;:{&quot;importId&quot;:&quot;b54896ecdee1817a84ce23014c82bbd1&quot;,&quot;recommendation&quot;:[{&quot;chart_type&quot;:&quot;scatter&quot;,&quot;title&quot;:&quot;Valor x Quantidade&quot;,&quot;justification&quot;:&quot;Duas vari\u00e1veis num\u00e9ricas permitem an\u00e1lise de correla\u00e7\u00e3o\/dispers\u00e3o.&quot;,&quot;metrics&quot;:[{&quot;points&quot;:12},{&quot;s&quot;:&quot;arr&quot;}],&quot;aggregated_data&quot;:[[[{&quot;x&quot;:10,&quot;y&quot;:25.5},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;x&quot;:5,&quot;y&quot;:94.5},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;x&quot;:0,&quot;y&quot;:0},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;x&quot;:7,&quot;y&quot;:21.7},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;x&quot;:3,&quot;y&quot;:357},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;x&quot;:12,&quot;y&quot;:180},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;x&quot;:8,&quot;y&quot;:64},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;x&quot;:40,&quot;y&quot;:220},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;x&quot;:4,&quot;y&quot;:140},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;x&quot;:15,&quot;y&quot;:45},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;x&quot;:6,&quot;y&quot;:72},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;x&quot;:9,&quot;y&quot;:40.5},{&quot;s&quot;:&quot;arr&quot;}]],{&quot;s&quot;:&quot;arr&quot;}],&quot;columns&quot;:[[&quot;Quantidade&quot;,&quot;Valor&quot;],{&quot;s&quot;:&quot;arr&quot;}],&quot;issues&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}]},{&quot;s&quot;:&quot;arr&quot;}],&quot;chartId&quot;:&quot;chart-6ae9dab1899b5&quot;},&quot;memo&quot;:{&quot;id&quot;:&quot;kVUdXvTcyAk32Py6aQH4&quot;,&quot;name&quot;:&quot;dashboard-chart&quot;,&quot;path&quot;:&quot;dashboard\/b54896ecdee1817a84ce23014c82bbd1&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;release&quot;:&quot;a-a-a&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;pt_BR&quot;,&quot;islands&quot;:[]},&quot;checksum&quot;:&quot;b8bb127e3c8facbd57641a63d4b3761eb092f932fe83b897446869d0267af5de&quot;}" wire:effects="[]" wire:id="kVUdXvTcyAk32Py6aQH4" wire:name="dashboard-chart" class="group overflow-hidden rounded-2xl border border-line bg-surface shadow-sm transition-shadow duration-200 hover:shadow-lg hover:shadow-slate-200/70">
+        <div class="flex items-start justify-between gap-3 border-b border-line px-5 py-4">
+        <div class="min-w-0">
+            <h3 class="truncate text-sm font-semibold text-ink" title="Valor x Quantidade">Valor x Quantidade</h3>
+            <p class="mt-1 line-clamp-2 text-xs leading-5 text-muted">Duas vari├â┬íveis num├â┬®ricas permitem an├â┬ílise de correla├â┬º├â┬úo/dispers├â┬úo.</p>
+        </div>
+        <span class="shrink-0 rounded-full border border-indigo-100 bg-indigo-50 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.1em] text-indigo-600">
+            Dispers├â┬úo
+        </span>
+    </div>
+
+    <div class="h-[290px] w-full sm:h-[330px]" wire:ignore="" x-data="DataCanvasChart(JSON.parse('{\u0022chart_type\u0022:\u0022scatter\u0022,\u0022title\u0022:\u0022Valor x Quantidade\u0022,\u0022justification\u0022:\u0022Duas vari├â┬íveis num├â┬®ricas permitem an├â┬ílise de correla├â┬º├â┬úo\\\/dispers├â┬úo.\u0022,\u0022metrics\u0022:{\u0022points\u0022:12},\u0022aggregated_data\u0022:[{\u0022x\u0022:10,\u0022y\u0022:25.5},{\u0022x\u0022:5,\u0022y\u0022:94.5},{\u0022x\u0022:0,\u0022y\u0022:0},{\u0022x\u0022:7,\u0022y\u0022:21.7},{\u0022x\u0022:3,\u0022y\u0022:357},{\u0022x\u0022:12,\u0022y\u0022:180},{\u0022x\u0022:8,\u0022y\u0022:64},{\u0022x\u0022:40,\u0022y\u0022:220},{\u0022x\u0022:4,\u0022y\u0022:140},{\u0022x\u0022:15,\u0022y\u0022:45},{\u0022x\u0022:6,\u0022y\u0022:72},{\u0022x\u0022:9,\u0022y\u0022:40.5}],\u0022columns\u0022:[\u0022Quantidade\u0022,\u0022Valor\u0022],\u0022issues\u0022:[]}'))"></div>
+
+    <!--[if BLOCK]><![endif]-->                <div class="border-t border-line bg-canvas/50 px-5 py-2.5">
+            <div class="flex flex-wrap gap-x-4 gap-y-1.5 text-[11px] text-muted">
+                <!--[if BLOCK]><![endif]-->                                        <span class="inline-flex items-baseline gap-1">
+                        <span class="font-semibold text-ink">12</span>
+                        <span>pontos</span>
+                    </span>
+                <!--[if ENDBLOCK]><![endif]-->            </div>
+        </div>
+    <!--[if ENDBLOCK]><![endif]--></div>
+                                    </div>
+                                <!--[if ENDBLOCK]><![endif]-->                            </div>
+                        <!--[if ENDBLOCK]><![endif]-->                    </section>
+
+                    
+                    <section class="overflow-hidden rounded-2xl border border-line bg-surface shadow-sm">
+                        <button type="button" wire:click="toggleTable" class="flex w-full flex-wrap items-center justify-between gap-3 px-5 py-4 text-left transition-colors hover:bg-canvas sm:px-6" aria-expanded="false">
+                            <span class="flex min-w-0 items-center gap-3">
+                                <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-slate-100 text-slate-600">
+                                    <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M3 4.5A1.5 1.5 0 0 1 4.5 3h11A1.5 1.5 0 0 1 17 4.5v11a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 3 15.5v-11ZM5 6v2h4V6H5Zm6 0v2h4V6h-4ZM5 10v4h4v-4H5Zm6 0v4h4v-4h-4Z"></path></svg>
+                                </span>
+                                <span class="min-w-0">
+                                    <span class="block text-sm font-semibold text-ink">Registros completos</span>
+                                    <span class="mt-0.5 block text-xs text-muted">Tabela secund├â┬íria para conferir e ordenar os dados originais.</span>
+                                </span>
+                            </span>
+                            <span class="flex items-center gap-3">
+                                <span class="rounded-full border border-line bg-canvas px-3 py-1 text-xs font-medium text-muted">12 registros</span>
+                                <svg class="h-4 w-4 text-muted transition-transform " viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 11.17l3.71-3.94a.75.75 0 1 1 1.08 1.04l-4.25 4.5a.75.75 0 0 1-1.08 0l-4.25-4.5a.75.75 0 0 1 .02-1.06Z" clip-rule="evenodd"></path></svg>
+                            </span>
+                        </button>
+
+                        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                    </section>
+                </div>
+
+                <aside class="flex min-w-0 flex-col gap-6">
+                    
+                    <section class="overflow-hidden rounded-2xl border border-indigo-100 bg-gradient-to-br from-indigo-50 via-white to-teal-50 p-5 shadow-sm">
+                        <div class="flex items-center gap-2">
+                            <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-600 text-white">
+                                <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 2a6 6 0 0 0-3.5 10.87c.31.23.5.6.5.99v.64c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-.64c0-.39.19-.76.5-.99A6 6 0 0 0 10 2ZM8 17a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 0-1h-3A.5.5 0 0 0 8 17Z"></path></svg>
+                            </span>
+                            <h2 class="text-sm font-semibold text-ink">Leitura r├â┬ípida</h2>
+                        </div>
+                        <!--[if BLOCK]><![endif]-->                            <ol class="mt-4 space-y-3">
+                                <!--[if BLOCK]><![endif]-->                                    <li class="flex gap-3 text-xs leading-5 text-slate-600">
+                                        <span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white text-[10px] font-bold text-indigo-600 shadow-sm">1</span>
+                                        <span>A base tem 12 registros em 5 colunas, com 100,0% das c├â┬®lulas preenchidas.</span>
+                                    </li>
+                                                                    <li class="flex gap-3 text-xs leading-5 text-slate-600">
+                                        <span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white text-[10px] font-bold text-indigo-600 shadow-sm">2</span>
+                                        <span>A soma de "Quantidade" ├â┬® 119, com m├â┬®dia de 9,92 por registro.</span>
+                                    </li>
+                                                                    <li class="flex gap-3 text-xs leading-5 text-slate-600">
+                                        <span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white text-[10px] font-bold text-indigo-600 shadow-sm">3</span>
+                                        <span>O per├â┬¡odo identificado vai de 01/02/2026 a 23/02/2026.</span>
+                                    </li>
+                                                                    <li class="flex gap-3 text-xs leading-5 text-slate-600">
+                                        <span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white text-[10px] font-bold text-indigo-600 shadow-sm">4</span>
+                                        <span>A categoria mais frequente em "Produto" ├â┬® "Caneta" (1 registros).</span>
+                                    </li>
+                                <!--[if ENDBLOCK]><![endif]-->                            </ol>
+                        <!--[if ENDBLOCK]><![endif]-->                    </section>
+
+                    
+                    <div wire:key="export-panel-b54896ecdee1817a84ce23014c82bbd1" wire:snapshot="{&quot;data&quot;:{&quot;importId&quot;:&quot;b54896ecdee1817a84ce23014c82bbd1&quot;},&quot;memo&quot;:{&quot;id&quot;:&quot;EJQowuELHXTyOR9wMSDX&quot;,&quot;name&quot;:&quot;exports.export-panel&quot;,&quot;path&quot;:&quot;dashboard\/b54896ecdee1817a84ce23014c82bbd1&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;release&quot;:&quot;a-a-a&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;pt_BR&quot;,&quot;islands&quot;:[]},&quot;checksum&quot;:&quot;ab2046fe3d961295a2b06624323b9b73b1cca2cface5a3e673f89fea5dbee6ff&quot;}" wire:effects="[]" wire:id="EJQowuELHXTyOR9wMSDX" wire:name="exports.export-panel" class="rounded-xl border border-line bg-surface">
+    <div class="flex flex-wrap items-center justify-between gap-3 border-b border-line px-4 py-4 sm:px-6">
+        <div>
+            <h2 class="text-base font-semibold">Exportar</h2>
+            <p class="mt-1 text-xs text-muted">Baixe dados e relat├â┬│rios em diferentes formatos</p>
+        </div>
+    </div>
+    <div class="flex flex-wrap items-center gap-2 px-4 py-4 sm:px-6">
+        <a href="http://127.0.0.1:8123/exports/b54896ecdee1817a84ce23014c82bbd1/csv" class="inline-flex items-center justify-center rounded-md border border-line px-3 py-1.5 text-sm font-medium hover:text-ink">CSV</a>
+        <a href="http://127.0.0.1:8123/exports/b54896ecdee1817a84ce23014c82bbd1/json" class="inline-flex items-center justify-center rounded-md border border-line px-3 py-1.5 text-sm font-medium hover:text-ink">JSON</a>
+        <a href="http://127.0.0.1:8123/exports/b54896ecdee1817a84ce23014c82bbd1/pdf" class="inline-flex items-center justify-center rounded-md border border-line px-3 py-1.5 text-sm font-medium hover:text-ink">PDF</a>
+        <button type="button" onclick="window.DataCanvasExport?.exportAll?.()" class="inline-flex items-center justify-center rounded-md bg-brand px-3 py-1.5 text-sm font-medium text-white hover:bg-brand-strong">Exportar gr├â┬íficos (PNG)</button>
+    </div>
+</div>
+
+                    
+                    <section class="rounded-2xl border border-line bg-surface p-5 shadow-sm">
+                        <div class="flex items-center justify-between gap-2">
+                            <h2 class="text-sm font-semibold text-ink">Colunas identificadas</h2>
+                            <span class="rounded-full bg-canvas px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-muted">5</span>
+                        </div>
+                        <ul class="mt-4 divide-y divide-line">
+                            <!--[if BLOCK]><![endif]-->                                <li class="py-2.5 first:pt-0 last:pb-0">
+                                    <div class="flex items-start justify-between gap-2">
+                                        <p class="min-w-0 truncate text-xs font-medium text-ink" title="Produto">Produto</p>
+                                        <span class="shrink-0 rounded bg-canvas px-1.5 py-0.5 text-[10px] font-medium text-muted">Texto</span>
+                                    </div>
+                                    <div class="mt-1 flex flex-wrap items-center gap-1.5">
+                                        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                                        <span class="text-[10px] text-muted">12 ├â┬║nicos</span>
+                                        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                                    </div>
+                                </li>
+                                                            <li class="py-2.5 first:pt-0 last:pb-0">
+                                    <div class="flex items-start justify-between gap-2">
+                                        <p class="min-w-0 truncate text-xs font-medium text-ink" title="Regiao">Regiao</p>
+                                        <span class="shrink-0 rounded bg-canvas px-1.5 py-0.5 text-[10px] font-medium text-muted">Texto</span>
+                                    </div>
+                                    <div class="mt-1 flex flex-wrap items-center gap-1.5">
+                                        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                                        <span class="text-[10px] text-muted">4 ├â┬║nicos</span>
+                                        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                                    </div>
+                                </li>
+                                                            <li class="py-2.5 first:pt-0 last:pb-0">
+                                    <div class="flex items-start justify-between gap-2">
+                                        <p class="min-w-0 truncate text-xs font-medium text-ink" title="Quantidade">Quantidade</p>
+                                        <span class="shrink-0 rounded bg-canvas px-1.5 py-0.5 text-[10px] font-medium text-muted">Inteiro</span>
+                                    </div>
+                                    <div class="mt-1 flex flex-wrap items-center gap-1.5">
+                                        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                                        <span class="text-[10px] text-muted">12 ├â┬║nicos</span>
+                                        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                                    </div>
+                                </li>
+                                                            <li class="py-2.5 first:pt-0 last:pb-0">
+                                    <div class="flex items-start justify-between gap-2">
+                                        <p class="min-w-0 truncate text-xs font-medium text-ink" title="Valor">Valor</p>
+                                        <span class="shrink-0 rounded bg-canvas px-1.5 py-0.5 text-[10px] font-medium text-muted">Decimal</span>
+                                    </div>
+                                    <div class="mt-1 flex flex-wrap items-center gap-1.5">
+                                        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                                        <span class="text-[10px] text-muted">12 ├â┬║nicos</span>
+                                        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                                    </div>
+                                </li>
+                                                            <li class="py-2.5 first:pt-0 last:pb-0">
+                                    <div class="flex items-start justify-between gap-2">
+                                        <p class="min-w-0 truncate text-xs font-medium text-ink" title="Data">Data</p>
+                                        <span class="shrink-0 rounded bg-canvas px-1.5 py-0.5 text-[10px] font-medium text-muted">Data</span>
+                                    </div>
+                                    <div class="mt-1 flex flex-wrap items-center gap-1.5">
+                                        <!--[if BLOCK]><![endif]-->                                            <span class="rounded-full bg-indigo-50 px-2 py-0.5 text-[10px] font-semibold text-indigo-600">Data</span>
+                                        <!--[if ENDBLOCK]><![endif]-->                                        <span class="text-[10px] text-muted">12 ├â┬║nicos</span>
+                                        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                                    </div>
+                                </li>
+                            <!--[if ENDBLOCK]><![endif]-->                        </ul>
+                    </section>
+
+                    
+                    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                </aside>
+            </div>
+        </div>
+    <!--[if ENDBLOCK]><![endif]--></div>
+    </main>
+
+    <footer class="border-t border-line bg-surface">
+        <div class="mx-auto flex w-full max-w-7xl flex-col gap-2 px-4 py-6 text-sm text-muted sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+            <p>DataCanvas ├óÔé¼ÔÇØ an├â┬ílise de planilhas sem cadastro.</p>
+            <p>Projeto em desenvolvimento ├é┬À 2026</p>
+        </div>
+    </footer>
+
+    <script>
+        window.DataCanvasExport = {
+            loadImage(source) {
+                return new Promise((resolve, reject) => {
+                    const image = new Image();
+                    image.onload = () => resolve(image);
+                    image.onerror = () => reject(new Error('N├â┬úo foi poss├â┬¡vel carregar um dos gr├â┬íficos.'));
+                    image.src = source;
+                });
+            },
+
+            collectChartImages() {
+                const echarts = window.DataCanvas?.echarts;
+                const images = [];
+
+                if (echarts) {
+                    document.querySelectorAll('[_echarts_instance_]').forEach((container) => {
+                        const chart = echarts.getInstanceByDom(container);
+
+                        if (! chart) {
+                            return;
+                        }
+
+                        try {
+                            images.push(chart.getDataURL({ type: 'png', pixelRatio: 2, backgroundColor: '#ffffff' }));
+                        } catch (error) {
+                            // Um gr├â┬ífico inv├â┬ílido n├â┬úo deve impedir a exporta├â┬º├â┬úo dos demais.
+                        }
+                    });
+                }
+
+                if (images.length === 0) {
+                    document.querySelectorAll('canvas').forEach((canvas) => {
+                        try {
+                            if (canvas.width > 0 && canvas.height > 0) {
+                                images.push(canvas.toDataURL('image/png'));
+                            }
+                        } catch (error) {
+                            // Canvas ainda n├â┬úo renderizado ou protegido pelo navegador.
+                        }
+                    });
+                }
+
+                return images;
+            },
+
+            async combineChartImages(images) {
+                const loaded = await Promise.all(images.map((source) => this.loadImage(source)));
+                const gap = 16;
+                const width = Math.max(...loaded.map((image) => image.naturalWidth || image.width));
+                const height = loaded.reduce((total, image) => total + (image.naturalHeight || image.height), 0) + gap * (loaded.length - 1);
+
+                const canvas = document.createElement('canvas');
+                canvas.width = width;
+                canvas.height = height;
+
+                const context = canvas.getContext('2d');
+                context.fillStyle = '#ffffff';
+                context.fillRect(0, 0, width, height);
+
+                let offset = 0;
+                loaded.forEach((image) => {
+                    const imageWidth = image.naturalWidth || image.width;
+                    const imageHeight = image.naturalHeight || image.height;
+                    context.drawImage(image, Math.round((width - imageWidth) / 2), offset, imageWidth, imageHeight);
+                    offset += imageHeight + gap;
+                });
+
+                return canvas.toDataURL('image/png');
+            },
+
+            async exportAll() {
+                const importId = document.querySelector('[data-import-id]')?.getAttribute('data-import-id') || "b54896ecdee1817a84ce23014c82bbd1";
+                const token = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content') || '';
+
+                if (! importId) {
+                    window.alert('Importa├â┬º├â┬úo n├â┬úo identificada. Recarregue o dashboard e tente novamente.');
+                    return;
+                }
+
+                const images = this.collectChartImages().filter(Boolean);
+
+                if (images.length === 0) {
+                    window.alert('Nenhum gr├â┬ífico dispon├â┬¡vel para exportar.');
+                    return;
+                }
+
+                try {
+                    const image = images.length === 1 ? images[0] : await this.combineChartImages(images);
+                    const formData = new FormData();
+                    formData.append('_token', token);
+                    formData.append('image', image);
+
+                    const response = await fetch('/exports/' + encodeURIComponent(importId) + '/png', {
+                        method: 'POST',
+                        headers: {
+                            'Accept': 'image/png',
+                            'X-CSRF-TOKEN': token,
+                        },
+                        body: formData,
+                        credentials: 'same-origin',
+                    });
+
+                    if (! response.ok) {
+                        const message = await response.text();
+                        throw new Error(message || 'Falha ao gerar a imagem.');
+                    }
+
+                    const blob = await response.blob();
+                    const url = window.URL.createObjectURL(blob);
+                    const link = document.createElement('a');
+                    link.href = url;
+                    link.download = 'graficos-' + new Date().toISOString().slice(0, 10) + '.png';
+                    document.body.appendChild(link);
+                    link.click();
+                    link.remove();
+                    window.URL.revokeObjectURL(url);
+                } catch (error) {
+                    window.alert(error.message || 'N├â┬úo foi poss├â┬¡vel exportar os gr├â┬íficos.');
+                }
+            },
+        };
+    </script>
+
+
+
+</body></html>

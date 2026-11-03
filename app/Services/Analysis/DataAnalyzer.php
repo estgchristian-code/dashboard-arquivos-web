@@ -16,6 +16,8 @@ use Throwable;
 
 final class DataAnalyzer
 {
+    private const ANALYSIS_VERSION = 2;
+
     public function __construct(
         private readonly ImportRepository $importRepository,
     ) {}
@@ -28,34 +30,49 @@ final class DataAnalyzer
         }
 
         $fullRows = $this->loadFullRows($importId);
-        $totalRecords = count($fullRows);
-        if ($totalRecords === 0 && count($import->previewRows) > 0) {
+        if (count($fullRows) === 0 && count($import->previewRows) > 0) {
             $fullRows = $import->previewRows;
-            $totalRecords = count($fullRows);
         }
 
-        $columnAnalyses = $this->analyzeColumns($import, $fullRows);
-        $recommendations = $this->recommendCharts($import, $fullRows, $columnAnalyses);
-
-        $issues = $this->detectIssues($columnAnalyses, $recommendations, $totalRecords);
-        $summary = [
-            'total_records' => $totalRecords,
-            'total_columns' => count($import->columns),
-            'recommendations_count' => count($recommendations),
-        ];
-
-        $analysis = new ImportAnalysis(
-            importId: $importId,
-            totalRecords: $totalRecords,
-            columnAnalyses: $columnAnalyses,
-            recommendations: $recommendations,
-            summary: $summary,
-            issues: $issues,
-        );
+        $analysis = $this->analyzeRows($import, $fullRows, $importId);
 
         $this->storeAnalysis($importId, $analysis);
 
         return $analysis;
+    }
+
+    /**
+     * Analisa um subconjunto de linhas já filtrado, sem gravar cache.
+     *
+     * @param  array<int, array<int, string>>  $rows
+     */
+    public function analyzeRows(StoredImport $import, array $rows, ?string $importId = null): ImportAnalysis
+    {
+        $normalized = [];
+        foreach (array_values($rows) as $row) {
+            if (! is_array($row)) {
+                continue;
+            }
+
+            $normalized[] = array_map(
+                fn (mixed $value): string => is_scalar($value) ? (string) $value : '',
+                array_values($row),
+            );
+        }
+
+        $columnAnalyses = $this->analyzeColumns($import, $normalized);
+        $recommendations = $this->recommendCharts($import, $normalized, $columnAnalyses);
+        $totalRecords = count($normalized);
+        $summary = $this->buildSummary($import, $columnAnalyses, $recommendations, $totalRecords);
+
+        return new ImportAnalysis(
+            importId: $importId ?? $import->id,
+            totalRecords: $totalRecords,
+            columnAnalyses: $columnAnalyses,
+            recommendations: $recommendations,
+            summary: $summary,
+            issues: $this->detectIssues($columnAnalyses, $recommendations, $totalRecords),
+        );
     }
 
     public function getStoredAnalysis(string $importId, string $ownerHash): ?ImportAnalysis
@@ -72,6 +89,9 @@ final class DataAnalyzer
             $contents = $disk->get($importId.'/analysis.json');
             $data = json_decode($contents, true, 512, JSON_THROW_ON_ERROR);
             if (! is_array($data)) {
+                return null;
+            }
+            if ((int) ($data['analysis_version'] ?? 0) !== self::ANALYSIS_VERSION) {
                 return null;
             }
             $columnAnalyses = [];
@@ -92,6 +112,9 @@ final class DataAnalyzer
                     median: $ca['median'] ?? null,
                     categories: is_array($ca['categories'] ?? null) ? $ca['categories'] : [],
                     hasTemporalTrend: (bool) ($ca['has_temporal_trend'] ?? false),
+                    isEmail: (bool) ($ca['is_email'] ?? false),
+                    isName: (bool) ($ca['is_name'] ?? false),
+                    emailDomains: is_array($ca['email_domains'] ?? null) ? $ca['email_domains'] : [],
                 );
             }
             $recommendations = [];
@@ -156,7 +179,6 @@ final class DataAnalyzer
     private function analyzeColumns(StoredImport $import, array $rows): array
     {
         $analyses = [];
-        $columnCount = $import->columnCount;
         $totalRecords = count($rows);
 
         foreach ($import->columns as $index => $colMeta) {
@@ -197,6 +219,46 @@ final class DataAnalyzer
             $mean = null;
             $median = null;
             $categories = [];
+            $isEmail = false;
+            $isName = false;
+            $emailDomains = [];
+
+            if (! $isIdentifier && in_array($type, [ColumnType::Text->value, ColumnType::Mixed->value], true) && $nonEmptyCount > 0) {
+                $emailCount = 0;
+                $domainCounts = [];
+                foreach ($values as $value) {
+                    $candidate = trim($value);
+                    if (! filter_var($candidate, FILTER_VALIDATE_EMAIL)) {
+                        continue;
+                    }
+                    $emailCount++;
+                    $at = strrpos($candidate, '@');
+                    $domain = $at === false ? '' : mb_strtolower(substr($candidate, $at + 1));
+                    if ($domain !== '') {
+                        $domainCounts[$domain] = ($domainCounts[$domain] ?? 0) + 1;
+                    }
+                }
+
+                if ($emailCount >= max(1, (int) ceil($nonEmptyCount * 0.8))) {
+                    $isEmail = true;
+                    arsort($domainCounts);
+                    $i = 0;
+                    foreach ($domainCounts as $domain => $count) {
+                        if ($i >= 20) {
+                            break;
+                        }
+                        $emailDomains[] = ['value' => $domain, 'count' => $count];
+                        $i++;
+                    }
+                    $categories = $emailDomains;
+                }
+
+                if (! $isEmail && $nonEmptyCount >= 2 && $distinctCount >= 2) {
+                    $lowerName = mb_strtolower($name);
+                    $headerNameHint = preg_match('/\b(nome|name|cliente|contato|respons[aá]vel|pessoa|usu[aá]rio|colaborador|funcion[aá]rio|aluno|participante|s[oó]cio)\b/u', $lowerName) === 1;
+                    $isName = $headerNameHint;
+                }
+            }
 
             if (! $isIdentifier && in_array($type, [ColumnType::Integer->value, ColumnType::Decimal->value], true)) {
                 $nums = [];
@@ -220,13 +282,17 @@ final class DataAnalyzer
                         $median = ($sorted[intdiv($count, 2) - 1] + $sorted[intdiv($count, 2)]) / 2;
                     }
                 }
-            } elseif (in_array($type, [ColumnType::Text->value, ColumnType::Boolean->value], true) && ! $isIdentifier) {
+            } elseif (! $isEmail && in_array($type, [ColumnType::Text->value, ColumnType::Boolean->value], true) && ! $isIdentifier) {
                 $counts = [];
+                $labels = [];
                 foreach ($values as $v) {
-                    $key = mb_strtolower(trim($v));
+                    $label = trim($v);
+                    $key = mb_strtolower($label);
                     if ($key === '') {
                         continue;
                     }
+                    // Agrupa sem diferenciar maiúsculas, mas preserva a grafia original.
+                    $labels[$key] ??= $label;
                     $counts[$key] = ($counts[$key] ?? 0) + 1;
                 }
                 arsort($counts);
@@ -236,8 +302,23 @@ final class DataAnalyzer
                     if ($i >= 20) {
                         break;
                     }
-                    $categories[] = ['value' => $k, 'count' => $c];
+                    $categories[] = ['value' => $labels[$k] ?? $k, 'count' => $c];
                     $i++;
+                }
+            }
+
+            if (! $isIdentifier && in_array($type, [ColumnType::Date->value, ColumnType::DateTime->value], true) && $nonEmptyCount > 0) {
+                $dates = [];
+                foreach ($values as $value) {
+                    $parsed = $this->parseDate(trim($value));
+                    if ($parsed !== null) {
+                        $dates[] = $parsed->format('Y-m-d');
+                    }
+                }
+                if (! empty($dates)) {
+                    sort($dates);
+                    $min = $dates[0];
+                    $max = $dates[count($dates) - 1];
                 }
             }
 
@@ -262,6 +343,9 @@ final class DataAnalyzer
                 median: is_float($median) ? round($median, 6) : $median,
                 categories: $categories,
                 hasTemporalTrend: $hasTemporalTrend,
+                isEmail: $isEmail,
+                isName: $isName,
+                emailDomains: $emailDomains,
             );
         }
 
@@ -303,17 +387,36 @@ final class DataAnalyzer
         $numericCols = [];
         $catCols = [];
         $dateCols = [];
+        $emailCols = [];
         foreach ($columnAnalyses as $idx => $ca) {
             if ($ca->isIdentifier) {
                 continue;
             }
-            if (in_array($ca->type, [ColumnType::Integer->value, ColumnType::Decimal->value], true) && $ca->nonEmptyCount > 0) {
+            if ($ca->isEmail) {
+                $emailCols[] = ['idx' => $idx, 'analysis' => $ca];
+            } elseif (in_array($ca->type, [ColumnType::Integer->value, ColumnType::Decimal->value], true) && $ca->nonEmptyCount > 0) {
                 $numericCols[] = ['idx' => $idx, 'analysis' => $ca];
             } elseif (in_array($ca->type, [ColumnType::Text->value, ColumnType::Boolean->value], true) && $ca->nonEmptyCount > 0 && $ca->distinctCount >= 1) {
                 $catCols[] = ['idx' => $idx, 'analysis' => $ca];
             } elseif (in_array($ca->type, [ColumnType::Date->value, ColumnType::DateTime->value], true)) {
                 $dateCols[] = ['idx' => $idx, 'analysis' => $ca];
             }
+        }
+
+        foreach ($emailCols as $ec) {
+            $ca = $ec['analysis'];
+            if (count($ca->emailDomains) < 2) {
+                continue;
+            }
+            $recs[] = new ChartRecommendation(
+                chartType: count($ca->emailDomains) <= 6 ? ChartType::Pie->value : ChartType::Bar->value,
+                title: 'Domínios de e-mail — '.$ca->name,
+                justification: 'Os endereços foram agrupados por domínio, revelando a origem dos contatos sem criar métricas numéricas artificiais.',
+                metrics: ['domains' => count($ca->emailDomains), 'emails' => $ca->nonEmptyCount],
+                aggregatedData: $ca->emailDomains,
+                columns: [$ca->name],
+                issues: [],
+            );
         }
 
         foreach ($numericCols as $nc) {
@@ -345,13 +448,20 @@ final class DataAnalyzer
 
         foreach ($catCols as $cc) {
             $ca = $cc['analysis'];
+
+            if ($ca->isName && $ca->duplicateCount === 0) {
+                continue;
+            }
+
             if ($ca->distinctCount >= 2 && $ca->distinctCount <= 20 && $ca->nonEmptyCount >= 2) {
                 $aggregated = $ca->categories;
-                if ($ca->distinctCount <= 6) {
+                if ($ca->isEmail || $ca->distinctCount <= 6) {
                     $recs[] = new ChartRecommendation(
                         chartType: ChartType::Pie->value,
-                        title: 'Proporção por '.$ca->name,
-                        justification: 'Categorias com baixa cardinalidade permitem visualização em pizza.',
+                        title: ($ca->isName ? 'Nomes mais frequentes — ' : 'Proporção por ').$ca->name,
+                        justification: $ca->isName
+                            ? 'Nomes repetidos permitem identificar os contatos mais presentes na base.'
+                            : 'Categorias com baixa cardinalidade permitem visualização em pizza.',
                         metrics: ['distinct' => $ca->distinctCount, 'total' => $ca->nonEmptyCount],
                         aggregatedData: $aggregated,
                         columns: [$ca->name],
@@ -368,12 +478,26 @@ final class DataAnalyzer
                         issues: [],
                     );
                 }
+
+                continue;
+            }
+
+            if (! $ca->isName && $ca->distinctCount > 20 && $ca->distinctCount <= 50 && $ca->duplicateCount > 0 && count($ca->categories) >= 2) {
+                $recs[] = new ChartRecommendation(
+                    chartType: ChartType::Bar->value,
+                    title: 'Valores mais frequentes — '.$ca->name,
+                    justification: 'A coluna tem muitos valores distintos; o gráfico destaca apenas os mais recorrentes, sem criar categorias artificiais.',
+                    metrics: ['distinct' => $ca->distinctCount, 'total' => $ca->nonEmptyCount],
+                    aggregatedData: $ca->categories,
+                    columns: [$ca->name],
+                    issues: [],
+                );
             }
         }
 
         if (! empty($catCols) && ! empty($numericCols) && $totalRecords >= 2) {
             foreach ($catCols as $cc) {
-                if ($cc['analysis']->distinctCount < 2 || $cc['analysis']->distinctCount > 15) {
+                if ($cc['analysis']->isName || $cc['analysis']->distinctCount < 2 || $cc['analysis']->distinctCount > 15) {
                     continue;
                 }
                 foreach ($numericCols as $nc) {
@@ -451,6 +575,112 @@ final class DataAnalyzer
         }
 
         return $unique;
+    }
+
+    /**
+     * @param  array<int, ColumnAnalysis>  $columnAnalyses
+     * @param  array<int, ChartRecommendation>  $recommendations
+     * @return array<string, mixed>
+     */
+    private function buildSummary(StoredImport $import, array $columnAnalyses, array $recommendations, int $totalRecords): array
+    {
+        $filled = 0;
+        $empty = 0;
+        $numeric = 0;
+        $text = 0;
+        $date = 0;
+        $boolean = 0;
+        $email = 0;
+        $name = 0;
+        $categorical = 0;
+        $measures = [];
+        $dateMin = null;
+        $dateMax = null;
+        $domains = [];
+
+        foreach ($columnAnalyses as $ca) {
+            $filled += $ca->nonEmptyCount;
+            $empty += $ca->emptyCount;
+
+            if (in_array($ca->type, [ColumnType::Integer->value, ColumnType::Decimal->value], true)) {
+                $numeric++;
+                if (! $ca->isIdentifier && $ca->nonEmptyCount > 0) {
+                    $measures[] = [
+                        'name' => $ca->name,
+                        'sum' => $ca->sum,
+                        'mean' => $ca->mean,
+                        'min' => $ca->min,
+                        'max' => $ca->max,
+                    ];
+                }
+            }
+
+            if (in_array($ca->type, [ColumnType::Text->value, ColumnType::Mixed->value], true)) {
+                $text++;
+            }
+
+            if (in_array($ca->type, [ColumnType::Date->value, ColumnType::DateTime->value], true)) {
+                $date++;
+                if ($ca->min !== null && ($dateMin === null || strcmp((string) $ca->min, $dateMin) < 0)) {
+                    $dateMin = (string) $ca->min;
+                }
+                if ($ca->max !== null && ($dateMax === null || strcmp((string) $ca->max, $dateMax) > 0)) {
+                    $dateMax = (string) $ca->max;
+                }
+            }
+
+            if ($ca->type === ColumnType::Boolean->value) {
+                $boolean++;
+            }
+
+            if ($ca->isEmail) {
+                $email++;
+                foreach ($ca->emailDomains as $domain) {
+                    $value = (string) ($domain['value'] ?? '');
+                    if ($value === '') {
+                        continue;
+                    }
+                    $domains[$value] = ($domains[$value] ?? 0) + (int) ($domain['count'] ?? 0);
+                }
+            }
+
+            if ($ca->isName) {
+                $name++;
+            }
+
+            if (! $ca->isIdentifier && in_array($ca->type, [ColumnType::Text->value, ColumnType::Boolean->value], true)) {
+                $categorical++;
+            }
+        }
+
+        arsort($domains);
+        $domainList = [];
+        foreach ($domains as $value => $count) {
+            $domainList[] = ['value' => $value, 'count' => $count];
+        }
+
+        $totalColumns = count($import->columns);
+        $totalCells = $totalRecords * $totalColumns;
+
+        return [
+            'total_records' => $totalRecords,
+            'total_columns' => $totalColumns,
+            'recommendations_count' => count($recommendations),
+            'filled_cells' => $filled,
+            'empty_cells' => $empty,
+            'total_cells' => $totalCells,
+            'completeness' => $totalCells > 0 ? round(($filled / $totalCells) * 100, 1) : 0.0,
+            'numeric_columns' => $numeric,
+            'text_columns' => $text,
+            'date_columns' => $date,
+            'boolean_columns' => $boolean,
+            'email_columns' => $email,
+            'name_columns' => $name,
+            'categorical_columns' => $categorical,
+            'email_domains' => $domainList,
+            'measures' => array_slice($measures, 0, 6),
+            'date_range' => $dateMin !== null && $dateMax !== null ? ['min' => $dateMin, 'max' => $dateMax] : null,
+        ];
     }
 
     private function getColumnValues(array $rows, int $idx): array
@@ -619,11 +849,13 @@ final class DataAnalyzer
     {
         $disk = $this->disk();
         try {
-            $data = json_encode(
-                $analysis->toArray(),
+            $data = $analysis->toArray();
+            $data['analysis_version'] = self::ANALYSIS_VERSION;
+            $encoded = json_encode(
+                $data,
                 JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR
             );
-            $disk->put($importId.'/analysis.json', $data);
+            $disk->put($importId.'/analysis.json', $encoded);
         } catch (Throwable) {
         }
     }

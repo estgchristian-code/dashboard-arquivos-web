@@ -139,6 +139,10 @@
                 A prévia é temporária, fica em armazenamento privado e é removida automaticamente em até
                 {{ $limits['retention_hours'] }} horas. Nenhum arquivo é público.
             </p>
+            <div class="flex flex-wrap items-center gap-2 border-t border-line px-4 py-3">
+                <a href="{{ route('dashboard') }}" class="inline-flex items-center justify-center rounded-md bg-brand px-3 py-1.5 text-sm font-medium text-white transition-colors hover:bg-brand-strong focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand">Gerar dashboard</a>
+                <button type="button" wire:click="remove" class="inline-flex items-center justify-center rounded-md border border-line bg-surface px-3 py-1.5 text-sm font-medium text-muted transition-colors hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand">Remover e enviar outro</button>
+            </div>
         </div>
     @else
         <div
@@ -209,3 +213,5 @@
         </p>
     @endif
 </div>
+
+

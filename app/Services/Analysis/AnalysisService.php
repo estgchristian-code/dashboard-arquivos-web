@@ -39,6 +39,21 @@ final class AnalysisService
         return $this->analyzer->getStoredAnalysis($importId, $ownerHash);
     }
 
+    /**
+     * Analisa somente as linhas filtradas, sem alterar o cache da importação.
+     *
+     * @param  array<int, array<int, string>>  $rows
+     */
+    public function analyzeRowsForOwner(string $importId, string $ownerHash, array $rows): ImportAnalysis
+    {
+        $import = $this->repository->findOwned($importId, $ownerHash);
+        if ($import === null) {
+            throw new \InvalidArgumentException('Importação não encontrada ou não autorizada.');
+        }
+
+        return $this->analyzer->analyzeRows($import, $rows, $importId);
+    }
+
     public function forceAnalyze(string $importId, string $ownerHash): ImportAnalysis
     {
         $import = $this->repository->findOwned($importId, $ownerHash);

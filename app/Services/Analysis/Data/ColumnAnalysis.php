@@ -20,6 +20,9 @@ final readonly class ColumnAnalysis
         public float|int|null $median = null,
         public array $categories = [],
         public bool $hasTemporalTrend = false,
+        public bool $isEmail = false,
+        public bool $isName = false,
+        public array $emailDomains = [],
     ) {}
 
     /**
@@ -43,6 +46,9 @@ final readonly class ColumnAnalysis
             'median' => $this->median,
             'categories' => $this->categories,
             'has_temporal_trend' => $this->hasTemporalTrend,
+            'is_email' => $this->isEmail,
+            'is_name' => $this->isName,
+            'email_domains' => $this->emailDomains,
         ];
     }
 }

@@ -2,23 +2,25 @@
 
 namespace App\Http\Controllers\Exports;
 
+use App\Http\Controllers\Controller;
 use App\Services\Exports\ExportService;
 use App\Services\Imports\ImportRepository;
 use App\Services\Imports\VisitorIdentity;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class ExportController extends Controller
 {
     public function csv(Request $request, string $importId)
     {
-        $this->validate($request, ['importId' => ['string', 'regex:/^[a-f0-9]{32}$/']]);
+        $this->assertValidImportId($importId);
 
         return app(ExportService::class)->exportCsv($importId);
     }
 
     public function json(Request $request, string $importId)
     {
-        $this->validate($request, ['importId' => ['string', 'regex:/^[a-f0-9]{32}$/']]);
+        $this->assertValidImportId($importId);
 
         $result = app(ExportService::class)->exportJson($importId);
 
@@ -30,7 +32,7 @@ class ExportController extends Controller
 
     public function pdf(Request $request, string $importId)
     {
-        $this->validate($request, ['importId' => ['string', 'regex:/^[a-f0-9]{32}$/']]);
+        $this->assertValidImportId($importId);
 
         $result = app(ExportService::class)->exportPdf($importId);
 
@@ -42,7 +44,7 @@ class ExportController extends Controller
 
     public function png(Request $request, string $importId)
     {
-        $this->validate($request, ['importId' => ['string', 'regex:/^[a-f0-9]{32}$/']]);
+        $this->assertValidImportId($importId);
 
         $imageData = $request->input('image');
         if (! is_string($imageData) || $imageData === '') {
@@ -75,5 +77,12 @@ class ExportController extends Controller
             'Content-Type' => 'image/png',
             'Content-Disposition' => 'attachment; filename="'.$filename.'"',
         ]);
+    }
+
+    private function assertValidImportId(string $importId): void
+    {
+        Validator::make(['importId' => $importId], [
+            'importId' => ['string', 'regex:/^[a-f0-9]{32}$/'],
+        ])->validate();
     }
 }

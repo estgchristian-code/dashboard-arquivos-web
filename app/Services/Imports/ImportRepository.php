@@ -185,6 +185,21 @@ final class ImportRepository
     }
 
     /**
+     * Remove um diretório sem interromper a limpeza dos demais.
+     */
+    private function removeDirectory(Filesystem $disk, string $path): bool
+    {
+        try {
+            $disk->deleteDirectory($path);
+
+            return true;
+        } catch (Throwable) {
+            // Arquivos bloqueados (por exemplo, no Windows) são tentados novamente na próxima execução.
+            return false;
+        }
+    }
+
+    /**
      * Remove importações expiradas e diretórios incompletos antigos.
      *
      * @return int quantidade de diretórios removidos
@@ -205,8 +220,9 @@ final class ImportRepository
             $id = basename(str_replace('\\', '/', $directory));
 
             if (! $this->isValidId($id)) {
-                $disk->deleteDirectory($directory);
-                $removed++;
+                if ($this->removeDirectory($disk, $directory)) {
+                    $removed++;
+                }
 
                 continue;
             }
@@ -215,8 +231,7 @@ final class ImportRepository
 
             if ($metadata === null) {
                 // Diretório sem metadata: importação interrompida. Remove após 1 hora.
-                if ($this->directoryAgeInHours($disk, $id) >= 1) {
-                    $disk->deleteDirectory($id);
+                if ($this->directoryAgeInHours($disk, $id) >= 1 && $this->removeDirectory($disk, $id)) {
                     $removed++;
                 }
 
@@ -225,8 +240,7 @@ final class ImportRepository
 
             $expiresAt = $this->parseDate($metadata['expires_at'] ?? null);
 
-            if ($expiresAt === null || $expiresAt->lessThanOrEqualTo($now)) {
-                $disk->deleteDirectory($id);
+            if (($expiresAt === null || $expiresAt->lessThanOrEqualTo($now)) && $this->removeDirectory($disk, $id)) {
                 $removed++;
             }
         }
