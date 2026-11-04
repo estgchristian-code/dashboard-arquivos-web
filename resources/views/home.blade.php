@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
-@section('title', 'DataCanvas — Dashboards a partir de planilhas')
+@section('title', 'Oqentra — Dashboards a partir de planilhas')
 
 @section('content')
     <header class="border-b border-line bg-surface">
         <div class="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
-            <a href="{{ route('home') }}" class="flex items-center gap-2.5" aria-label="DataCanvas — página inicial">
+            <a href="{{ route('home') }}" class="flex items-center gap-2.5" aria-label="Oqentra — página inicial">
                 <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-brand text-white" aria-hidden="true">
                     <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M4 19V10" />
@@ -14,7 +14,7 @@
                         <path d="M22 19H2" />
                     </svg>
                 </span>
-                <span class="text-lg font-semibold tracking-tight">DataCanvas</span>
+                <span class="text-lg font-semibold tracking-tight">Oqentra</span>
             </a>
 
             <nav class="hidden items-center gap-8 text-sm font-medium text-muted md:flex" aria-label="Navegação principal">
@@ -49,7 +49,7 @@
                     </h1>
 
                     <p class="mt-5 max-w-xl text-lg leading-8 text-muted">
-                        O DataCanvas organiza arquivos tabulares e gera gráficos automaticamente para você explorar seus dados. Sem cadastro, sem login e sem configuração inicial.
+                        O Oqentra organiza arquivos tabulares e gera gráficos automaticamente para você explorar seus dados. Sem cadastro, sem login e sem configuração inicial.
                     </p>
 
                     <ul class="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-muted">
@@ -104,7 +104,7 @@
                         <span class="text-sm font-semibold text-brand">02</span>
                         <h3 class="mt-3 text-base font-semibold">Revise os dados</h3>
                         <p class="mt-2 text-sm leading-6 text-muted">
-                            O DataCanvas identifica colunas, tipos e agrupamentos relevantes.
+                            O Oqentra identifica colunas, tipos e agrupamentos relevantes.
                         </p>
                     </li>
                     <li class="rounded-xl border border-line bg-canvas p-6">
@@ -182,7 +182,7 @@
 
     <footer class="border-t border-line bg-surface">
         <div class="mx-auto flex w-full max-w-6xl flex-col gap-2 px-4 py-8 text-sm text-muted sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
-            <p>DataCanvas — análise de planilhas sem cadastro.</p>
+            <p>Oqentra — análise de planilhas sem cadastro.</p>
             <p>Projeto em desenvolvimento · {{ date('Y') }}</p>
         </div>
     </footer>

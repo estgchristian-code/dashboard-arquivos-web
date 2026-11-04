@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
-@section('title', 'Dashboard — DataCanvas')
+@section('title', 'Dashboard — Oqentra')
 
 @section('content')
     <header class="border-b border-line bg-surface">
         <div class="mx-auto flex h-16 w-full max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
-            <a href="{{ route('home') }}" class="flex items-center gap-2.5" aria-label="DataCanvas — página inicial">
+            <a href="{{ route('home') }}" class="flex items-center gap-2.5" aria-label="Oqentra — página inicial">
                 <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-brand text-white" aria-hidden="true">
                     <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M4 19V10" />
@@ -14,7 +14,7 @@
                         <path d="M22 19H2" />
                     </svg>
                 </span>
-                <span class="text-lg font-semibold tracking-tight">DataCanvas</span>
+                <span class="text-lg font-semibold tracking-tight">Oqentra</span>
             </a>
 
             <div class="flex items-center gap-3">
@@ -31,13 +31,13 @@
 
     <footer class="border-t border-line bg-surface">
         <div class="mx-auto flex w-full max-w-7xl flex-col gap-2 px-4 py-6 text-sm text-muted sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
-            <p>DataCanvas — análise de planilhas sem cadastro.</p>
+            <p>Oqentra — análise de planilhas sem cadastro.</p>
             <p>Projeto em desenvolvimento · {{ date('Y') }}</p>
         </div>
     </footer>
 
     <script>
-        window.DataCanvasExport = {
+        window.OqentraExport = {
             loadImage(source) {
                 return new Promise((resolve, reject) => {
                     const image = new Image();
@@ -48,7 +48,7 @@
             },
 
             collectChartImages() {
-                const echarts = window.DataCanvas?.echarts;
+                const echarts = window.Oqentra?.echarts;
                 const images = [];
 
                 if (echarts) {

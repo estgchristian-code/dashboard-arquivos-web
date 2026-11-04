@@ -339,7 +339,7 @@ export function createDashboardChart(recommendation) {
         },
 
         async renderChart() {
-            const echarts = await window.DataCanvas.getECharts();
+            const echarts = await window.Oqentra.getECharts();
             this.chart = echarts.init(this.$el, null, { renderer: 'canvas' });
             this.chart.setOption(this.buildOption(), true);
         },

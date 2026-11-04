@@ -9,8 +9,8 @@ let echartsPromise = null;
 export function getECharts() {
     if (! echartsPromise) {
         echartsPromise = import('./echarts-runtime').then(({ default: echarts }) => {
-            window.DataCanvas = window.DataCanvas || {};
-            window.DataCanvas.echarts = echarts;
+            window.Oqentra = window.Oqentra || {};
+            window.Oqentra.echarts = echarts;
 
             return echarts;
         });
@@ -19,5 +19,5 @@ export function getECharts() {
     return echartsPromise;
 }
 
-window.DataCanvas = window.DataCanvas || {};
-window.DataCanvas.getECharts = getECharts;
+window.Oqentra = window.Oqentra || {};
+window.Oqentra.getECharts = getECharts;
